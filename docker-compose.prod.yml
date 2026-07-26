@@ -1,0 +1,128 @@
+name: ekas
+
+x-backend-env: &backend-env
+  env_file:
+    - .env
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-ekas}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-ekas}
+      POSTGRES_DB: ${POSTGRES_DB:-ekas}
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-ekas} -d ${POSTGRES_DB:-ekas}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  migrate:
+    image: 992382653273.dkr.ecr.ap-south-1.amazonaws.com/triode/clinoscare:backend-latest
+    <<: *backend-env
+    restart: "no"
+    volumes:
+      - media_data:/app/media
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    command: >
+      sh -c "python manage.py migrate --noinput &&
+             python manage.py seed_data &&
+             if [ -n \"$$OPERATIONS_ADMIN_EMAIL\" ] && [ -n \"$$OPERATIONS_ADMIN_PASSWORD\" ]; then
+               python manage.py create_operations_admin --noinput;
+             fi"
+
+  backend:
+    image: 992382653273.dkr.ecr.ap-south-1.amazonaws.com/triode/clinoscare:backend-latest
+    <<: *backend-env
+    restart: unless-stopped
+    volumes:
+      - media_data:/app/media
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:8000/healthz/"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+
+  celery-worker:
+    image: 992382653273.dkr.ecr.ap-south-1.amazonaws.com/triode/clinoscare:backend-latest
+    <<: *backend-env
+    restart: unless-stopped
+    command: ["celery", "-A", "config", "worker", "--loglevel=info", "--concurrency=2"]
+    volumes:
+      - media_data:/app/media
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "celery -A config inspect ping || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  celery-beat:
+    image: 992382653273.dkr.ecr.ap-south-1.amazonaws.com/triode/clinoscare:backend-latest
+    <<: *backend-env
+    restart: unless-stopped
+    command: ["celery", "-A", "config", "beat", "--loglevel=info", "--scheduler", "django_celery_beat.schedulers:DatabaseScheduler"]
+    volumes:
+      - media_data:/app/media
+    depends_on:
+      migrate:
+        condition: service_completed_successfully
+      redis:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD-SHELL", "pgrep -f 'celery.*beat' || exit 1"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 20s
+
+  frontend:
+    image: 992382653273.dkr.ecr.ap-south-1.amazonaws.com/triode/clinoscare:frontend-latest
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-8080}:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://localhost:80/healthz"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  postgres_data:
+  redis_data:
+  media_data:
