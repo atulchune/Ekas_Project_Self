@@ -6,8 +6,8 @@ import { X, Search, ArrowRight, ShoppingBag } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import { PRODUCTS } from "@/lib/products";
-import { cn } from "@/lib/utils";
+import { getProductSuggestions } from "@/lib/api/catalogClient";
+import { mapListItemToCard, ProductCardVM } from "@/lib/mappers/product";
 
 interface SearchOverlayProps {
     isOpen: boolean;
@@ -60,12 +60,22 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
     }, [onClose]);
 
     // Search Logic
-    const results = debouncedQuery.trim() === ""
-        ? []
-        : PRODUCTS.filter(p =>
-            p.name.toLowerCase().includes(debouncedQuery.toLowerCase()) ||
-            p.description.toLowerCase().includes(debouncedQuery.toLowerCase())
-        ).slice(0, 6); // Limit results for clean layout
+    const [results, setResults] = useState<ProductCardVM[]>([]);
+
+    useEffect(() => {
+        const q = debouncedQuery.trim();
+        if (q.length < 2) {
+            setResults([]);
+            return;
+        }
+        let cancelled = false;
+        getProductSuggestions(q)
+            .then((items) => {
+                if (!cancelled) setResults(items.map(mapListItemToCard));
+            })
+            .catch(() => setResults([]));
+        return () => { cancelled = true; };
+    }, [debouncedQuery]);
 
     const handleSearchSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -149,23 +159,25 @@ export function SearchOverlay({ isOpen, onClose }: SearchOverlayProps) {
                                     {results.map((product) => (
                                         <Link
                                             key={product.id}
-                                            href={`/product/${product.id}`}
+                                            href={`/product/${product.slug}`}
                                             onClick={onClose}
                                             className="flex items-center gap-4 p-3 hover:bg-white rounded-2xl transition-all group border border-transparent hover:border-gray-100 hover:shadow-sm"
                                         >
                                             <div className="w-14 h-14 bg-[#F9F7F2] rounded-xl relative overflow-hidden shrink-0 border border-gray-100">
-                                                <Image
-                                                    src={product.image}
-                                                    alt={product.name}
-                                                    fill
-                                                    className="object-cover"
-                                                />
+                                                {product.image && (
+                                                    <Image
+                                                        src={product.image}
+                                                        alt={product.name}
+                                                        fill
+                                                        className="object-cover"
+                                                    />
+                                                )}
                                             </div>
                                             <div className="flex-1 min-w-0">
                                                 <h4 className="font-semibold text-[#1F2937] font-serif group-hover:text-[#2D5C35] transition-colors truncate">
                                                     {product.name}
                                                 </h4>
-                                                <p className="text-xs text-gray-500 truncate">{product.description}</p>
+                                                <p className="text-xs text-gray-500 truncate">{product.shortDescription}</p>
                                             </div>
                                             <ArrowRight className="w-4 h-4 text-gray-300 group-hover:text-[#2D5C35] -translate-x-2 opacity-0 group-hover:translate-x-0 group-hover:opacity-100 transition-all" />
                                         </Link>

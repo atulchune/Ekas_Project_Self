@@ -2,18 +2,36 @@
 
 import { useFavorites } from "@/context/FavoritesContext";
 import { useCart } from "@/context/CartContext";
-import { PRODUCTS } from "@/lib/products";
+import { getProductBySlugClient } from "@/lib/api/catalogClient";
+import { mapDetailToViewModel, ProductDetailVM } from "@/lib/mappers/product";
 import { X, Heart, Trash2, ShoppingBag } from "lucide-react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 export function FavoritesSheet() {
     const { isOpen, closeFavorites, favorites, toggleFavorite } = useFavorites();
     const { addItem } = useCart();
+    const [favoriteProducts, setFavoriteProducts] = useState<ProductDetailVM[]>([]);
 
-    const favoriteProducts = PRODUCTS.filter(p => favorites.includes(p.id));
+    useEffect(() => {
+        if (favorites.length === 0) {
+            setFavoriteProducts([]);
+            return;
+        }
+        let cancelled = false;
+        Promise.all(
+            favorites.map((slug) =>
+                getProductBySlugClient(slug).then(mapDetailToViewModel).catch(() => null)
+            )
+        ).then((results) => {
+            if (!cancelled) {
+                setFavoriteProducts(results.filter((p): p is ProductDetailVM => p !== null));
+            }
+        });
+        return () => { cancelled = true; };
+    }, [favorites]);
 
     // Prevent body scroll when favorites is open
     useEffect(() => {
@@ -75,40 +93,48 @@ export function FavoritesSheet() {
                             </button>
                         </div>
                     ) : (
-                        favoriteProducts.map((product) => (
-                            <div key={product.id} className="flex gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm relative group hover:border-red-500/30 transition-colors">
-                                <Link href={`/product/${product.id}`} onClick={closeFavorites} className="relative w-24 h-24 bg-gray-50 rounded-xl overflow-hidden flex-shrink-0">
-                                    <Image src={product.image} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform" />
-                                </Link>
-                                
-                                <div className="flex flex-col flex-1">
-                                    <div className="flex justify-between items-start mb-1">
-                                        <Link href={`/product/${product.id}`} onClick={closeFavorites} className="font-bold text-sm text-[#1F2937] hover:text-[#2D5C35] transition-colors line-clamp-2 pr-6">
-                                            {product.name}
-                                        </Link>
-                                        <button
-                                            onClick={() => toggleFavorite(product.id)}
-                                            className="text-gray-300 hover:text-red-500 transition-colors absolute top-4 right-4"
-                                            title="Remove from favorites"
-                                        >
-                                            <Trash2 className="w-4 h-4" />
-                                        </button>
-                                    </div>
-                                    <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">{product.sizes[0].label}</p>
-                                    
-                                    <div className="font-bold text-[#1F2937] mb-3">₹{product.sizes[0].price}</div>
+                        favoriteProducts.map((product) => {
+                            const variant = product.variants.find(v => v.isDefault) ?? product.variants[0];
+                            return (
+                                <div key={product.slug} className="flex gap-4 p-4 bg-white rounded-2xl border border-gray-100 shadow-sm relative group hover:border-red-500/30 transition-colors">
+                                    <Link href={`/product/${product.slug}`} onClick={closeFavorites} className="relative w-24 h-24 bg-gray-50 rounded-xl overflow-hidden flex-shrink-0">
+                                        {product.gallery[0] ? (
+                                            <Image src={product.gallery[0]} alt={product.name} fill className="object-cover group-hover:scale-105 transition-transform" />
+                                        ) : (
+                                            <div className="w-full h-full flex items-center justify-center text-gray-300"><ShoppingBag className="w-6 h-6" /></div>
+                                        )}
+                                    </Link>
 
-                                    <button
-                                        onClick={() => {
-                                            addItem(product, 1, product.sizes[0].label, product.sizes[0].price);
-                                        }}
-                                        className="mt-auto w-full bg-[#17301A] text-white py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-[#2D5C35] transition-colors flex items-center justify-center gap-2"
-                                    >
-                                        <ShoppingBag className="w-3.5 h-3.5" /> Add to Cart
-                                    </button>
+                                    <div className="flex flex-col flex-1">
+                                        <div className="flex justify-between items-start mb-1">
+                                            <Link href={`/product/${product.slug}`} onClick={closeFavorites} className="font-bold text-sm text-[#1F2937] hover:text-[#2D5C35] transition-colors line-clamp-2 pr-6">
+                                                {product.name}
+                                            </Link>
+                                            <button
+                                                onClick={() => toggleFavorite(product.slug)}
+                                                className="text-gray-300 hover:text-red-500 transition-colors absolute top-4 right-4"
+                                                title="Remove from favorites"
+                                            >
+                                                <Trash2 className="w-4 h-4" />
+                                            </button>
+                                        </div>
+                                        {variant && (
+                                            <>
+                                                <p className="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-2">{variant.label}</p>
+                                                <div className="font-bold text-[#1F2937] mb-3">₹{variant.price}</div>
+                                                <button
+                                                    onClick={() => addItem(variant.id, 1)}
+                                                    disabled={!variant.inStock}
+                                                    className="mt-auto w-full bg-[#17301A] text-white py-2.5 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-[#2D5C35] transition-colors flex items-center justify-center gap-2 disabled:opacity-40"
+                                                >
+                                                    <ShoppingBag className="w-3.5 h-3.5" /> {variant.inStock ? "Add to Cart" : "Sold Out"}
+                                                </button>
+                                            </>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        ))
+                            );
+                        })
                     )}
                 </div>
             </div>

@@ -2,12 +2,11 @@
 
 import Link from "next/link";
 import { ProductCard } from "@/components/ui/ProductCard";
-import { PRODUCTS } from "@/lib/products";
+import { ProductCardVM } from "@/lib/mappers/product";
 
-// Select 5 products to fit in the 5-column grid perfectly
-const featuredProducts = PRODUCTS.slice(0, 5);
-
-export function FeaturedProducts() {
+export function FeaturedProducts({ products }: { products: ProductCardVM[] }) {
+    // 5-column grid
+    const featuredProducts = products.slice(0, 5);
     return (
         <section className="py-16 bg-[#F4F1EA]">
             <div className="w-full max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8">

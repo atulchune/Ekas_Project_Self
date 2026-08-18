@@ -1,32 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
+import { BackendCategory } from "@/lib/api/types";
 
-const categories = [
-    {
-        id: 1,
-        name: "Cold Pressed Oils",
-        image: "/images/cat-oils.png",
-        href: "/shop?category=oils",
-        description: "Pure, unfiltered, and packed with nutrients. Extracted using traditional wood pressing."
-    },
-    {
-        id: 2,
-        name: "A2 Desi Ghee",
-        image: "/images/cat-ghee.png",
-        href: "/shop?category=ghee",
-        description: "Traditional Bilona method ghee handcrafted for purity and holiness."
-    },
-    {
-        id: 3,
-        name: "Healthy Seeds",
-        image: "/images/cat-seeds.png",
-        href: "/shop?category=seeds",
-        description: "Power-packed seeds essential for your daily nutrition and immunity."
-    },
-];
+// Backend categories have no image asset yet — decorative fallbacks keyed by slug.
+const IMAGE_BY_SLUG: Record<string, string> = {
+    "wood-pressed-oils": "/images/cat-oils.png",
+    "ghee": "/images/cat-ghee.png",
+    "honey": "/images/cat-seeds.png",
+    "preservative-free-foods": "/images/cat-seeds.png",
+};
+const DEFAULT_IMAGE = "/images/cat-oils.png";
 
-export function Categories() {
+export function Categories({ categories }: { categories: BackendCategory[] }) {
+    const displayCategories = categories.filter(c => c.product_count > 0).slice(0, 3);
+
+    if (displayCategories.length === 0) return null;
+
     return (
         <section className="py-24 bg-background">
             <div className="w-full max-w-[1600px] mx-auto px-4 md:px-6 lg:px-8">
@@ -37,14 +27,14 @@ export function Categories() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    {categories.map((cat, index) => (
+                    {displayCategories.map((cat) => (
                         <Link
                             key={cat.id}
-                            href={cat.href}
+                            href={`/shop?category=${cat.slug}`}
                             className="group relative h-[450px] overflow-hidden rounded-2xl cursor-pointer shadow-lg hover:shadow-2xl transition-all duration-500"
                         >
                             <Image
-                                src={cat.image}
+                                src={IMAGE_BY_SLUG[cat.slug] ?? DEFAULT_IMAGE}
                                 alt={cat.name}
                                 fill
                                 className="object-cover transition-transform duration-700 group-hover:scale-110"

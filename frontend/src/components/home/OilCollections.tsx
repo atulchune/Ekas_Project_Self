@@ -31,12 +31,12 @@ const IMAGES = {
 } as Record<string, string>;
 
 export const COLLECTIONS = [
-  { id: "groundnut", name: "Groundnut", tag: "New",         note: "Mild, buttery, high smoke point", price: "₹329", href: "/shop?category=groundnut" },
-  { id: "mustard",   name: "Mustard",   tag: "",            note: "Sharp kachi ghani pungency",      price: "₹279", href: "/shop?category=mustard" },
-  { id: "coconut",   name: "Coconut",   tag: "Loved",       note: "Sun-dried Kerala copra",          price: "₹299", href: "/shop?category=coconut" },
-  { id: "sesame",    name: "Sesame",    tag: "",            note: "Nutty, warm, everyday tempering", price: "₹349", href: "/shop?category=sesame" },
-  { id: "almond",    name: "Almond",    tag: "Small batch", note: "Delicate finishing oil",          price: "₹599", href: "/shop?category=almond" },
-  { id: "ghee",      name: "Ghee",      tag: "",            note: "Hand-churned A2 bilona",          price: "₹849", href: "/shop?category=ghee" },
+  { id: "groundnut", name: "Groundnut", tag: "New",         note: "Mild, buttery, high smoke point", price: "₹329", href: "/shop?search=groundnut" },
+  { id: "mustard",   name: "Mustard",   tag: "",            note: "Sharp kachi ghani pungency",      price: "₹279", href: "/shop?search=mustard" },
+  { id: "coconut",   name: "Coconut",   tag: "Loved",       note: "Sun-dried Kerala copra",          price: "₹299", href: "/shop?search=coconut" },
+  { id: "sesame",    name: "Sesame",    tag: "",            note: "Nutty, warm, everyday tempering", price: "₹349", href: "/shop?search=sesame" },
+  { id: "almond",    name: "Almond",    tag: "Small batch", note: "Delicate finishing oil",          price: "₹599", href: "/shop?search=almond" },
+  { id: "ghee",      name: "Ghee",      tag: "",            note: "Hand-churned A2 bilona",          price: "₹849", href: "/shop?search=ghee" },
 ];
 
 /* ------------------------------------------------- particle ring geometry */
