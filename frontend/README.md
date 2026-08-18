@@ -1,16 +1,62 @@
-# React + Vite
+# EKAS Healthy Foods - Modern E-Commerce Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A premium, modern e-commerce web application for EKAS Healthy Foods, built with Next.js, Tailwind CSS, and TypeScript.
 
-Currently, two official plugins are available:
+## 🌟 Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Premium UI/UX**: Inspired by modern D2C brands, featuring smooth animations, glassmorphism, and a clean, organic aesthetic.
+- **Responsive Design**: Fully responsive layout optimized for mobile, tablet, and desktop.
+- **Product Management**: 
+  - Product Listing Page with filters and sorting.
+  - Detailed Product Page with image galleries and quantity selectors.
+- **Shopping Cart**: Fully functional cart UI with state management.
+- **Performance**: Optimized with Next.js App Router and Server Components.
 
-## React Compiler
+## 🛠️ Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Framework**: Next.js 15 (App Router)
+- **Styling**: Tailwind CSS, CSS Modules
+- **Icons**: Lucide React
+- **Animations**: CSS Keyframes (Tailwind)
+- **Font**: Geist Sans (Sans-serif), Playfair Display (Serif)
 
-## Expanding the Oxlint configuration
+## 🚀 Getting Started
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+1.  **Install Dependencies**:
+    ```bash
+    npm install
+    ```
+
+2.  **Run Development Server**:
+    ```bash
+    npm run dev
+    ```
+
+3.  **Open Browser**:
+    Navigate to [http://localhost:3000](http://localhost:3000)
+
+## 📁 Project Structure
+
+```
+src/
+├── app/
+│   ├── layout.tsx       # Root layout with Navbar & Footer
+│   ├── page.tsx         # Landing Page
+│   ├── shop/            # Product Listing
+│   ├── product/[id]/    # Product Details
+│   └── cart/            # Shopping Cart
+├── components/
+│   ├── home/            # Landing page sections (Hero, Categories, etc.)
+│   ├── layout/          # Global layout components (Navbar, Footer)
+│   └── ui/              # Reusable UI components (ProductCard, etc.)
+├── lib/
+│   └── utils.ts         # Utility functions (cn, etc.)
+└── public/
+    └── images/          # Static assets
+```
+
+## 🎨 Design System
+
+- **Primary Color**: Deep Forest Green (`#2D5C35`) - Represents nature and organic purity.
+- **Secondary Color**: Golden Harvest (`#D9A528`) - Represents premium quality and traditional methods.
+- **Background**: Soft Cream (`#FDFAF5`) - Provides a warm, organic feel compared to stark white.
