@@ -13,7 +13,17 @@ import { ProductDetailVM } from "@/lib/mappers/product";
 import OfferBand, { OFFERS } from "@/components/ui/OfferBand";
 import OilFluid from "@/components/ui/OilFluid";
 
+// Product-line showcase clips — decorative, keyed by slug like the hero art direction.
+function getProductVideo(slug: string): string | null {
+    if (slug.includes("coconut")) return "/videos/coconut.mp4";
+    if (slug.includes("ghee")) return "/videos/ghee.mp4";
+    if (slug.includes("mustard")) return "/videos/mustard.mp4";
+    if (slug.includes("sunflower")) return "/videos/sunflower.mp4";
+    return null;
+}
+
 export function ProductDetailClient({ product }: { product: ProductDetailVM }) {
+    const productVideo = getProductVideo(product.slug);
     const defaultIndex = Math.max(0, product.variants.findIndex(v => v.isDefault));
     const [selectedVariantIndex, setSelectedVariantIndex] = useState(defaultIndex === -1 ? 0 : defaultIndex);
     const [quantity, setQuantity] = useState(1);
@@ -349,14 +359,24 @@ export function ProductDetailClient({ product }: { product: ProductDetailVM }) {
                     <>
                         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-12">
                             <div className="w-full relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-gray-900 flex items-center justify-center aspect-video lg:aspect-auto lg:min-h-[400px]">
-                                <iframe
-                                    className="absolute inset-0 w-full h-full"
-                                    src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&controls=1&rel=0"
-                                    title="Product Video"
-                                    frameBorder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                                    allowFullScreen
-                                ></iframe>
+                                {productVideo ? (
+                                    <video
+                                        className="absolute inset-0 w-full h-full object-cover"
+                                        src={productVideo}
+                                        controls
+                                        playsInline
+                                        preload="metadata"
+                                    />
+                                ) : (
+                                    <iframe
+                                        className="absolute inset-0 w-full h-full"
+                                        src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&controls=1&rel=0"
+                                        title="Product Video"
+                                        frameBorder="0"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                        allowFullScreen
+                                    ></iframe>
+                                )}
                             </div>
 
                             <div className="flex flex-col justify-center gap-8">
