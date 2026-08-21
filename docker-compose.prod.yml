@@ -170,6 +170,9 @@ services:
   frontend:
     image: 992382653273.dkr.ecr.ap-south-1.amazonaws.com/triode/clinoscare:frontend-${IMAGE_TAG:-latest}
     restart: unless-stopped
+    environment:
+      DJANGO_INTERNAL_API_URL: http://backend:8000/api/v1
+      NEXT_PUBLIC_SITE_URL: ${PUBLIC_SITE_URL:-http://localhost:8080}
     ports:
       - "${FRONTEND_PORT:-8080}:80"
     depends_on:
