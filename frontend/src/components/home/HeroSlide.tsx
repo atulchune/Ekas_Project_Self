@@ -3,20 +3,18 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion, Variants } from "framer-motion";
-import { ArrowRight, Sparkles, Droplets } from "lucide-react";
+import { ArrowRight, Sparkles, Droplets, Leaf } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { ProductCardVM } from "@/lib/mappers/product";
+import { Product } from "@/lib/products";
 
 interface HeroSlideProps {
-    product: ProductCardVM;
+    product: Product;
     isActive: boolean;
 }
 
-// Curated color themes keyed by slug — decorative art direction, not product data.
-const getProductTheme = (product: ProductCardVM) => {
-    const slug = product.slug;
-
-    if (slug.includes("ghee")) {
+// Map themes based on category or specific product IDs for the moody Glowrop style
+const getProductTheme = (product: Product) => {
+    if (product.category === "Ghee") {
         return {
             bg: "from-[#1a1205] to-[#2b1f0c]",
             accent: "bg-[#D9A528]",
@@ -27,7 +25,7 @@ const getProductTheme = (product: ProductCardVM) => {
             image: "/images/ghee_3d_render.png"
         };
     }
-    if (slug.includes("coconut")) {
+    if (product.id === "p3") { // Coconut Oil
         return {
             bg: "from-[#081216] to-[#0a1b24]",
             accent: "bg-[#38bdf8]",
@@ -38,7 +36,7 @@ const getProductTheme = (product: ProductCardVM) => {
             image: "/images/coconut_3d_render.png"
         };
     }
-    if (slug.includes("mustard")) {
+    if (product.id === "p4") { // Mustard Oil
         return {
             bg: "from-[#1a1403] to-[#241a05]",
             accent: "bg-[#facc15]",
@@ -49,7 +47,7 @@ const getProductTheme = (product: ProductCardVM) => {
             image: "/images/mustard_3d_render.png"
         };
     }
-    if (slug.includes("sesame")) {
+    if (product.id === "p5") { // Sesame Oil
         return {
             bg: "from-[#110c08] to-[#1c140c]",
             accent: "bg-[#fdba74]",
@@ -60,7 +58,7 @@ const getProductTheme = (product: ProductCardVM) => {
             image: "/images/sesame_3d_render.png"
         };
     }
-    if (slug.includes("almond")) {
+    if (product.id === "p6") { // Almond Oil
         return {
             bg: "from-[#150a16] to-[#251027]",
             accent: "bg-[#c084fc]",
@@ -71,30 +69,8 @@ const getProductTheme = (product: ProductCardVM) => {
             image: "/images/almond_3d_render.png"
         };
     }
-    if (slug.includes("groundnut")) {
-        return {
-            bg: "from-[#11160d] to-[#1c2415]",
-            accent: "bg-[#4ade80]",
-            textAccent: "text-[#4ade80]",
-            glow: "bg-[#4ade80]/10",
-            button: "bg-[#4ade80] hover:bg-[#22c55e] text-[#11160d]",
-            textMain: "text-[#f0fdf4]",
-            image: "/images/groundnut_3d_render.png"
-        };
-    }
-    if (slug.includes("honey")) {
-        return {
-            bg: "from-[#1a1002] to-[#2b1a04]",
-            accent: "bg-[#f0a500]",
-            textAccent: "text-[#f0a500]",
-            glow: "bg-[#f0a500]/10",
-            button: "bg-[#f0a500] hover:bg-[#c98600] text-[#1a1002]",
-            textMain: "text-[#fff3d6]",
-            image: product.image
-        };
-    }
-
-    // Default / unmatched (e.g. sunflower) — earthy green, real product photo.
+    
+    // Default / Cold Pressed Oils (Earthy Green/Brown - Groundnut)
     return {
         bg: "from-[#11160d] to-[#1c2415]",
         accent: "bg-[#4ade80]",
@@ -102,13 +78,13 @@ const getProductTheme = (product: ProductCardVM) => {
         glow: "bg-[#4ade80]/10",
         button: "bg-[#4ade80] hover:bg-[#22c55e] text-[#11160d]",
         textMain: "text-[#f0fdf4]",
-        image: product.image
+        image: "/images/groundnut_3d_render.png"
     };
 };
 
 const containerVariants: Variants = {
     hidden: { opacity: 0 },
-    visible: {
+    visible: { 
         opacity: 1,
         transition: { staggerChildren: 0.1, delayChildren: 0.2 }
     },
@@ -130,18 +106,18 @@ export function HeroSlide({ product, isActive }: HeroSlideProps) {
         )}>
             {/* Subtle background glow behind the product */}
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                <motion.div
+                <motion.div 
                     initial={{ scale: 0.5, opacity: 0 }}
                     animate={isActive ? { scale: 1, opacity: 1 } : { scale: 0.5, opacity: 0 }}
                     transition={{ duration: 2, ease: "easeOut" }}
-                    className={cn("w-[70vw] max-w-[800px] aspect-square rounded-full blur-[120px]", theme.glow)}
+                    className={cn("w-[70vw] max-w-[800px] aspect-square rounded-full blur-[120px]", theme.glow)} 
                 />
             </div>
 
             {/* Main Content Container - 100vh fit */}
             <div className="w-full h-full max-w-[1800px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10 flex flex-col pt-24 pb-8 lg:pt-28">
-
-                <motion.div
+                
+                <motion.div 
                     variants={containerVariants}
                     initial="hidden"
                     animate={isActive ? "visible" : "hidden"}
@@ -150,7 +126,7 @@ export function HeroSlide({ product, isActive }: HeroSlideProps) {
                 >
                     {/* TOP: Large Centered Typography */}
                     <div className="w-full text-center mt-4 lg:mt-8 flex flex-col items-center max-w-4xl mx-auto">
-                        <motion.h2
+                        <motion.h2 
                             variants={itemVariants}
                             className={cn("text-5xl sm:text-6xl lg:text-7xl xl:text-8xl font-medium leading-[1.05] font-serif tracking-tight", theme.textMain)}
                         >
@@ -166,9 +142,9 @@ export function HeroSlide({ product, isActive }: HeroSlideProps) {
 
                     {/* MIDDLE: Product & Side Floating Elements */}
                     <div className="relative w-full flex-1 flex items-center justify-center my-8 lg:my-0 min-h-[300px]">
-
+                        
                         {/* Left Floating Text */}
-                        <motion.div
+                        <motion.div 
                             variants={itemVariants}
                             className="absolute left-4 lg:left-20 xl:left-32 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center text-center max-w-[180px]"
                         >
@@ -187,20 +163,18 @@ export function HeroSlide({ product, isActive }: HeroSlideProps) {
                             transition={{ type: "spring", stiffness: 50, damping: 20, delay: 0.3 }}
                             className="relative w-full h-[45vh] lg:h-[55vh] max-h-[700px] z-20"
                         >
-                            {theme.image ? (
-                                <Image
-                                    src={theme.image}
-                                    alt={product.name}
-                                    fill
-                                    className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
-                                    priority
-                                    sizes="(max-width: 1024px) 80vw, 500px"
-                                />
-                            ) : null}
+                            <Image
+                                src={theme.image}
+                                alt={product.name}
+                                fill
+                                className="object-contain drop-shadow-[0_40px_80px_rgba(0,0,0,0.5)]"
+                                priority
+                                sizes="(max-width: 1024px) 80vw, 500px"
+                            />
                         </motion.div>
 
                         {/* Right Floating Text */}
-                        <motion.div
+                        <motion.div 
                             variants={itemVariants}
                             className="absolute right-4 lg:right-20 xl:right-32 top-1/2 -translate-y-1/2 hidden md:flex flex-col items-center text-center max-w-[180px]"
                         >
@@ -231,7 +205,7 @@ export function HeroSlide({ product, isActive }: HeroSlideProps) {
                     </motion.div>
 
                 </motion.div>
-
+                
                 {/* Decorative Bottom Lines (optional to frame it) */}
                 <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
             </div>

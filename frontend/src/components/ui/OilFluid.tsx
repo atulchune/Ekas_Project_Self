@@ -17,10 +17,10 @@ export default function OilFluid({
   blend = "multiply",
 }: OilFluidProps) {
   const ref = useRef<HTMLElement>(null);
-  const [mounted, setMounted] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    setIsMounted(true);
   }, []);
 
   useEffect(() => {
@@ -30,14 +30,15 @@ export default function OilFluid({
     el.setAttribute("z-index", String(zIndex));
     el.setAttribute("opacity", String(opacity));
     if (blend) el.setAttribute("blend", blend);
-  }, [mounted, palette, zIndex, opacity, blend]);
+  }, [palette, zIndex, opacity, blend, isMounted]);
 
-  if (!mounted) return null;
+  if (!isMounted) return null;
 
   return (
-    <oil-fluid
-      ref={ref}
-      aria-hidden="true"
+    <oil-fluid 
+      ref={ref} 
+      aria-hidden="true" 
+      suppressHydrationWarning={true}
       {...(palette && palette.length ? { palette: palette.join(",") } : {})}
       {...(zIndex !== undefined ? { "z-index": String(zIndex) } : {})}
       {...(opacity !== undefined ? { opacity: String(opacity) } : {})}
