@@ -1,19 +1,20 @@
 "use client";
 
 import { useState, useEffect, useCallback } from "react";
+import { PRODUCTS } from "@/lib/products";
 import { HeroSlide } from "./HeroSlide";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import OilFluid from "@/components/ui/OilFluid";
-import { ProductCardVM } from "@/lib/mappers/product";
 
 const AUTOPLAY_DELAY = 4000;
 
-export function Hero({ products }: { products: ProductCardVM[] }) {
+export function Hero() {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isHovered, setIsHovered] = useState(false);
-
-    const heroProducts = products;
+    
+    // Use all products for the hero carousel
+    const heroProducts = PRODUCTS;
 
     const nextSlide = useCallback(() => {
         setCurrentIndex((prev) => (prev + 1) % heroProducts.length);
