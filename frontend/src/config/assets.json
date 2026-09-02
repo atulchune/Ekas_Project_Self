@@ -1,0 +1,156 @@
+{
+  "hero": {
+    "desktopImage": "",
+    "mobileImage": "",
+    "video": "",
+    "poster": ""
+  },
+  "products": {
+    "almond-oil-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_01_Hero_1L.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_01_Hero_1L_Variant02.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_01_Hero_500ml.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_03_Ingredient.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_04_Nutrition.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_05_WoodPressedVsRefined.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_06_Cooking.png",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_BackLabel_1L.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_UGC01_ResearchDiary_Day30_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_UGC02_BeautyRoutine_Beautyhost_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_UGC03_Nutritionist_9x16.mp4"
+      ]
+    },
+    "coconut-oil-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_01_Hero_1L.png",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_03_Ingredient.png",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_04_Nutrition.png",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_05_WoodPressedVsRefined.png",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_06_Cooking.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_07_ListingVideo_1x1.mp4",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_UGC01_StateDish_Kerala_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_UGC02_ResearchDiary_Day29_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_UGC03_Nutritionist_Kerala_9x16.mp4"
+      ]
+    },
+    "ghee-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_01_Hero_250gm.png",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_01_Hero_500gm.png",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_01_Hero_5kg.png",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_03_Ingredient.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_07_ListingVideo_1x1.mp4",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_UGC01_ResearchDiary_Day31_A2GirCow_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_UGC02_StateDish_Gujarat_Undhiyu_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_UGC03_BeautyRoutine_Beautyhost_9x16.mp4"
+      ]
+    },
+    "ground-nut-oil-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_250ml.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_2L.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_5L.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_03_Ingredient.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_04_Nutrition.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_05_WoodPressedVsRefined.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_06_Cooking.png",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_07_ListingVideo_1x1.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_1L.mp4",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_UGC01_ProblemSwitch_Sneha_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_UGC02_FoodBlogger_Tanvi_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_UGC03_Nutritionist_Ishita_9x16.mp4"
+      ]
+    },
+    "homepage-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_03_ProductRange.png",
+        "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_04_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_05_DiwaliOffer_20Percent.png",
+        "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_06_DiwaliBackground.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_01_Hero_OilDrop.mp4",
+        "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_02_Hero_OilBubbles.mp4"
+      ]
+    },
+    "mustard-oil-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_01_Hero_1L.png",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_03_Ingredient.png",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_04_Nutrition.png",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_05_WoodPressedVsRefined.png",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_06_Cooking.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_07_ListingVideo_1x1.mp4",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_07_ListingVideo_1x1_Variant02.mp4",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_UGC01_StateDish_WestBengal_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_UGC02_TwoGenerations_unfinished_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_UGC03_UserReview_9x16.mp4"
+      ]
+    },
+    "sesame-oil-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_01_Hero_1L.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_01_Hero_500ml.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_01_Hero_5L.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_03_Ingredient.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_04_Nutrition.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_05_WoodPressedVsRefined.png",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_06_Cooking.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_07_ListingVideo_1x1.mp4",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_UGC01_StateDish_TamilNadu_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_UGC02_ResearchDiary_Day28_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_UGC03_Nutritionist_Priya_9x16.mp4"
+      ]
+    },
+    "sunflower-oil-assets": {
+      "images": [
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_01_Hero_1L.png",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_02_LabTested.png",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_03_Ingredient.png",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_04_Nutrition.png",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_05_WoodPressedVsRefined.png",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_06_Cooking.png"
+      ],
+      "videos": [
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_07_ListingVideo_1x1.mp4",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_ProductPage_16x9.mp4",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_UGC01_StateDish_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_UGC02_ResearchDiary_9x16.mp4",
+        "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_UGC03_Comparison_9x16.mp4"
+      ]
+    }
+  },
+  "story": {},
+  "lifestyle": {
+    "images": [],
+    "videos": []
+  },
+  "footer": {
+    "image": ""
+  }
+}

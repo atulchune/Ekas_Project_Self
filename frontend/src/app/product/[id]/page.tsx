@@ -114,9 +114,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
     return (
         <div className="min-h-screen bg-[#F9F7F2] font-sans pb-10">
-            <OilFluid />
             {/* Offer Band below Navbar */}
-            <div className="pt-20 lg:pt-[84px]">
+            <div>
                 <OfferBand {...OFFERS.coconut} />
             </div>
 
@@ -171,7 +170,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                                     >
                                         <div className="relative w-full h-full overflow-hidden rounded-3xl">
                                             <Image
-                                                src={product.gallery[activeImageIndex] || product.image}
+                                                src={product.images.gallery[activeImageIndex] || product.image}
                                                 alt={product.name}
                                                 fill
                                                 className="object-cover transition-transform duration-100 ease-out pointer-events-none"
@@ -184,7 +183,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
                                 {/* Thumbnails Row */}
                                 <div className="grid grid-cols-5 gap-3">
-                                    {product.gallery.map((img, i) => (
+                                    {product.images.gallery.map((img, i) => (
                                         <button
                                             key={i}
                                             onClick={() => setActiveImageIndex(i)}
@@ -390,16 +389,27 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
                 {/* Dossier Section 1: One ingredient list */}
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-stretch mb-12">
-                    {/* Left: YouTube Video */}
+                    {/* Left: Product Video */}
                     <div className="w-full relative rounded-3xl overflow-hidden shadow-lg border border-gray-100 bg-gray-900 flex items-center justify-center aspect-video lg:aspect-auto lg:min-h-[400px]">
-                        <iframe
-                            className="absolute inset-0 w-full h-full"
-                            src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&controls=1&rel=0"
-                            title="Product Video"
-                            frameBorder="0"
-                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                            allowFullScreen
-                        ></iframe>
+                        {product.videos?.productPage ? (
+                            <video
+                                src={product.videos.productPage}
+                                className="absolute inset-0 w-full h-full object-cover"
+                                autoPlay
+                                loop
+                                muted
+                                playsInline
+                            />
+                        ) : (
+                            <iframe
+                                className="absolute inset-0 w-full h-full"
+                                src="https://www.youtube.com/embed/jfKfPfyJRdk?autoplay=0&controls=1&rel=0"
+                                title="Product Video"
+                                frameBorder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowFullScreen
+                            ></iframe>
+                        )}
                     </div>
 
                     {/* Right: Text and Comparison Widget */}
@@ -609,6 +619,50 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                 {/* Divider */}
                 <div className="w-full h-px bg-gray-200 my-10"></div>
 
+                {/* See It In Real Kitchens (UGC Reels) */}
+                {product.videos?.ugc && product.videos.ugc.length > 0 && (
+                    <div className="w-full mb-20">
+                        <div className="text-center mb-10">
+                            <span className="text-[10px] font-bold text-[#8C6D3F] uppercase tracking-widest mb-3 block">COMMUNITY</span>
+                            <h2 className="text-3xl lg:text-4xl font-bold font-serif text-[#17301A]">See It In Real Kitchens</h2>
+                        </div>
+                        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+                            {product.videos.ugc.slice(0, 3).map((video, idx) => (
+                                <div key={idx} className="relative aspect-[9/16] bg-black rounded-2xl overflow-hidden shadow-lg border border-gray-100 group cursor-pointer hover:shadow-xl transition-shadow">
+                                    <video
+                                        src={video}
+                                        className="absolute inset-0 w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                                        autoPlay
+                                        loop
+                                        muted
+                                        playsInline
+                                    />
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-80 group-hover:opacity-60 transition-opacity"></div>
+
+                                    <div className="absolute top-4 right-4 text-white p-2 bg-black/30 rounded-full backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity">
+                                        <Maximize2 className="w-4 h-4" />
+                                    </div>
+
+                                    <div className="absolute bottom-4 left-4 right-4 text-white z-10">
+                                        <div className="flex items-center gap-2 mb-2">
+                                            <div className="w-8 h-8 rounded-full bg-white/20 backdrop-blur border border-white/30 flex items-center justify-center text-xs font-bold overflow-hidden shadow-sm">
+                                                <Image src={product.image} alt="User" width={32} height={32} className="object-cover" />
+                                            </div>
+                                            <div className="flex flex-col">
+                                                <span className="text-[13px] font-bold leading-tight">Ekas Community</span>
+                                                <span className="text-[10px] text-gray-300">@{product.name.replace(/\s+/g, '').toLowerCase()}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Divider */}
+                <div className="w-full h-px bg-gray-200 my-10"></div>
+
                 {/* REVIEWS SECTION */}
                 <div className="w-full px-4 mb-20">
                     {/* Header Row */}
@@ -762,8 +816,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                             View All <ArrowRight className="w-3.5 h-3.5" />
                         </Link>
                     </div>
-                    <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
-                        {PRODUCTS.filter(p => p.id !== product.id).slice(0, 5).map((related, idx) => (
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                        {PRODUCTS.filter(p => p.id !== product.id).map((related, idx) => (
                             <ProductCard key={related.id} product={related} index={idx} />
                         ))}
                     </div>

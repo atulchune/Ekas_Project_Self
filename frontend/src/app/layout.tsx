@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
@@ -9,15 +9,19 @@ import { CartSheet } from "@/components/cart/CartSheet";
 import { FavoritesSheet } from "@/components/favorites/FavoritesSheet";
 import { WhatsAppButton } from "@/components/layout/WhatsAppButton";
 
-const manrope = Manrope({
-  variable: "--font-manrope",
+const inter = Inter({
   subsets: ["latin"],
+  variable: "--font-inter",
+});
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-playfair",
 });
 
 export const metadata: Metadata = {
-  title: "EKAS Healthy Foods | Pure Cold Pressed Oils & Organic Ghee",
-  description: "Discover the authentic taste of health with EKAS Healthy Foods. Premium cold-pressed oils, A2 Ghee, and organic seeds sourced directly from farms.",
-  keywords: "cold pressed oil, A2 ghee, organic food, healthy oils, ekas",
+  title: "EKAS - Ancestral Luxury",
+  description: "Ancestral Indian wisdom, bottled for the modern kitchen. Pure, wood-pressed, and ethically sourced.",
 };
 
 export default function RootLayout({
@@ -27,8 +31,28 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="scroll-smooth overflow-x-hidden">
+      <head>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+        <style>{`
+          .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+          }
+        `}</style>
+      </head>
       <body
-        className={`${manrope.className} ${manrope.variable} antialiased bg-background text-foreground overflow-x-hidden font-sans`}
+        className={`${inter.className} ${playfair.variable} bg-background text-on-background font-body-md antialiased selection:bg-secondary/20 selection:text-primary`}
       >
         <FavoritesProvider>
           <CartProvider>
@@ -36,7 +60,7 @@ export default function RootLayout({
             <CartSheet />
             <FavoritesSheet />
             <WhatsAppButton />
-            <main className="min-h-screen pt-0">
+            <main className="pt-20">
               {children}
             </main>
             <Footer />
