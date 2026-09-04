@@ -1,0 +1,876 @@
+[
+  {
+    "Object Key": "almond-oil-assets/",
+    "Folder": "almond-oil-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.18003293982,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_01_Hero_1L.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_01_Hero_1L.png",
+    "Size Bytes": 968934,
+    "Size MB": 0.924,
+    "Last Modified": 46264.18041134259,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_01_Hero_1L.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_01_Hero_1L_Variant02.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_01_Hero_1L_Variant02.png",
+    "Size Bytes": 4918785,
+    "Size MB": 4.691,
+    "Last Modified": 46264.18047030093,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_01_Hero_1L_Variant02.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_01_Hero_500ml.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_01_Hero_500ml.png",
+    "Size Bytes": 3672334,
+    "Size MB": 3.502,
+    "Last Modified": 46264.18047443287,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_01_Hero_500ml.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_02_LabTested.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_02_LabTested.png",
+    "Size Bytes": 4895323,
+    "Size MB": 4.669,
+    "Last Modified": 46264.18049208333,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_02_LabTested.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_03_Ingredient.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_03_Ingredient.png",
+    "Size Bytes": 4333544,
+    "Size MB": 4.133,
+    "Last Modified": 46264.18026241898,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_03_Ingredient.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_04_Nutrition.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_04_Nutrition.png",
+    "Size Bytes": 4617109,
+    "Size MB": 4.403,
+    "Last Modified": 46264.18026166667,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_04_Nutrition.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_05_WoodPressedVsRefined.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_05_WoodPressedVsRefined.png",
+    "Size Bytes": 4448069,
+    "Size MB": 4.242,
+    "Last Modified": 46264.18025878472,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_05_WoodPressedVsRefined.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_06_Cooking.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_06_Cooking.png",
+    "Size Bytes": 7834122,
+    "Size MB": 7.471,
+    "Last Modified": 46264.1803849537,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_06_Cooking.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_BackLabel_1L.png",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_BackLabel_1L.png",
+    "Size Bytes": 4511954,
+    "Size MB": 4.303,
+    "Last Modified": 46264.18034152778,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_BackLabel_1L.png"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_ProductPage_16x9.mp4",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_ProductPage_16x9.mp4",
+    "Size Bytes": 16531834,
+    "Size MB": 15.766,
+    "Last Modified": 46264.18047231482,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_UGC01_ResearchDiary_Day30_9x16.mp4",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_UGC01_ResearchDiary_Day30_9x16.mp4",
+    "Size Bytes": 14077205,
+    "Size MB": 13.425,
+    "Last Modified": 46264.18050233796,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_UGC01_ResearchDiary_Day30_9x16.mp4"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_UGC02_BeautyRoutine_Beautyhost_9x16.mp4",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_UGC02_BeautyRoutine_Beautyhost_9x16.mp4",
+    "Size Bytes": 21036489,
+    "Size MB": 20.062,
+    "Last Modified": 46264.18043297454,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_UGC02_BeautyRoutine_Beautyhost_9x16.mp4"
+  },
+  {
+    "Object Key": "almond-oil-assets/EKAS_Almond_UGC03_Nutritionist_9x16.mp4",
+    "Folder": "almond-oil-assets",
+    "Filename": "EKAS_Almond_UGC03_Nutritionist_9x16.mp4",
+    "Size Bytes": 16925881,
+    "Size MB": 16.142,
+    "Last Modified": 46264.18039824074,
+    "Public URL": "https://ekas-assets.triodesolutions.com/almond-oil-assets/EKAS_Almond_UGC03_Nutritionist_9x16.mp4"
+  },
+  {
+    "Object Key": "coconut-oil-assets/",
+    "Folder": "coconut-oil-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.17491081019,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_01_Hero_1L.png",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_01_Hero_1L.png",
+    "Size Bytes": 4201942,
+    "Size MB": 4.007,
+    "Last Modified": 46264.17558878472,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_01_Hero_1L.png"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_02_LabTested.png",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_02_LabTested.png",
+    "Size Bytes": 4641648,
+    "Size MB": 4.427,
+    "Last Modified": 46264.17536059028,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_02_LabTested.png"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_03_Ingredient.png",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_03_Ingredient.png",
+    "Size Bytes": 4790569,
+    "Size MB": 4.569,
+    "Last Modified": 46264.17534253472,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_03_Ingredient.png"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_04_Nutrition.png",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_04_Nutrition.png",
+    "Size Bytes": 4336993,
+    "Size MB": 4.136,
+    "Last Modified": 46264.17543651621,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_04_Nutrition.png"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_05_WoodPressedVsRefined.png",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_05_WoodPressedVsRefined.png",
+    "Size Bytes": 5016627,
+    "Size MB": 4.784,
+    "Last Modified": 46264.17546466435,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_05_WoodPressedVsRefined.png"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_06_Cooking.png",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_06_Cooking.png",
+    "Size Bytes": 5550209,
+    "Size MB": 5.293,
+    "Last Modified": 46264.17552802083,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_06_Cooking.png"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_07_ListingVideo_1x1.mp4",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_07_ListingVideo_1x1.mp4",
+    "Size Bytes": 8409533,
+    "Size MB": 8.02,
+    "Last Modified": 46264.1755787963,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_07_ListingVideo_1x1.mp4"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_ProductPage_16x9.mp4",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_ProductPage_16x9.mp4",
+    "Size Bytes": 17550900,
+    "Size MB": 16.738,
+    "Last Modified": 46264.17565266204,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_UGC01_StateDish_Kerala_9x16.mp4",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_UGC01_StateDish_Kerala_9x16.mp4",
+    "Size Bytes": 12760026,
+    "Size MB": 12.169,
+    "Last Modified": 46264.17547597222,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_UGC01_StateDish_Kerala_9x16.mp4"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_UGC02_ResearchDiary_Day29_9x16.mp4",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_UGC02_ResearchDiary_Day29_9x16.mp4",
+    "Size Bytes": 18183302,
+    "Size MB": 17.341,
+    "Last Modified": 46264.17556428241,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_UGC02_ResearchDiary_Day29_9x16.mp4"
+  },
+  {
+    "Object Key": "coconut-oil-assets/EKAS_Coconut_UGC03_Nutritionist_Kerala_9x16.mp4",
+    "Folder": "coconut-oil-assets",
+    "Filename": "EKAS_Coconut_UGC03_Nutritionist_Kerala_9x16.mp4",
+    "Size Bytes": 18770381,
+    "Size MB": 17.901,
+    "Last Modified": 46264.17555214121,
+    "Public URL": "https://ekas-assets.triodesolutions.com/coconut-oil-assets/EKAS_Coconut_UGC03_Nutritionist_Kerala_9x16.mp4"
+  },
+  {
+    "Object Key": "ghee-assets/",
+    "Folder": "ghee-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.18515556713,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_01_Hero_250gm.png",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_01_Hero_250gm.png",
+    "Size Bytes": 1402263,
+    "Size MB": 1.337,
+    "Last Modified": 46264.18539461806,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_01_Hero_250gm.png"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_01_Hero_500gm.png",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_01_Hero_500gm.png",
+    "Size Bytes": 1240819,
+    "Size MB": 1.183,
+    "Last Modified": 46264.18539665509,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_01_Hero_500gm.png"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_01_Hero_5kg.png",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_01_Hero_5kg.png",
+    "Size Bytes": 1509188,
+    "Size MB": 1.439,
+    "Last Modified": 46264.18539641204,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_01_Hero_5kg.png"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_02_LabTested.png",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_02_LabTested.png",
+    "Size Bytes": 1521850,
+    "Size MB": 1.451,
+    "Last Modified": 46264.18543347222,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_02_LabTested.png"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_03_Ingredient.png",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_03_Ingredient.png",
+    "Size Bytes": 1540028,
+    "Size MB": 1.469,
+    "Last Modified": 46264.18543765046,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_03_Ingredient.png"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_07_ListingVideo_1x1.mp4",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_07_ListingVideo_1x1.mp4",
+    "Size Bytes": 7590924,
+    "Size MB": 7.239,
+    "Last Modified": 46264.18550952547,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_07_ListingVideo_1x1.mp4"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_ProductPage_16x9.mp4",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_ProductPage_16x9.mp4",
+    "Size Bytes": 19203960,
+    "Size MB": 18.314,
+    "Last Modified": 46264.18563369213,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_UGC01_ResearchDiary_Day31_A2GirCow_9x16.mp4",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_UGC01_ResearchDiary_Day31_A2GirCow_9x16.mp4",
+    "Size Bytes": 14442925,
+    "Size MB": 13.774,
+    "Last Modified": 46264.18563243056,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_UGC01_ResearchDiary_Day31_A2GirCow_9x16.mp4"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_UGC02_StateDish_Gujarat_Undhiyu_9x16.mp4",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_UGC02_StateDish_Gujarat_Undhiyu_9x16.mp4",
+    "Size Bytes": 21395772,
+    "Size MB": 20.405,
+    "Last Modified": 46264.18563329861,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_UGC02_StateDish_Gujarat_Undhiyu_9x16.mp4"
+  },
+  {
+    "Object Key": "ghee-assets/EKAS_Ghee_UGC03_BeautyRoutine_Beautyhost_9x16.mp4",
+    "Folder": "ghee-assets",
+    "Filename": "EKAS_Ghee_UGC03_BeautyRoutine_Beautyhost_9x16.mp4",
+    "Size Bytes": 18210966,
+    "Size MB": 17.367,
+    "Last Modified": 46264.18559415509,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ghee-assets/EKAS_Ghee_UGC03_BeautyRoutine_Beautyhost_9x16.mp4"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/",
+    "Folder": "ground-nut-oil-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.13101574074,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_01_Hero_1L.mp4",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_01_Hero_1L.mp4",
+    "Size Bytes": 8511255,
+    "Size MB": 8.117,
+    "Last Modified": 46264.1423987963,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_1L.mp4"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_01_Hero_250ml.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_01_Hero_250ml.png",
+    "Size Bytes": 1452428,
+    "Size MB": 1.385,
+    "Last Modified": 46264.14214587963,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_250ml.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_01_Hero_2L.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_01_Hero_2L.png",
+    "Size Bytes": 1171875,
+    "Size MB": 1.118,
+    "Last Modified": 46264.14214106482,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_2L.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_01_Hero_5L.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_01_Hero_5L.png",
+    "Size Bytes": 1121044,
+    "Size MB": 1.069,
+    "Last Modified": 46264.1421388426,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_01_Hero_5L.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_02_LabTested.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_02_LabTested.png",
+    "Size Bytes": 4601155,
+    "Size MB": 4.388,
+    "Last Modified": 46264.14222112268,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_02_LabTested.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_03_Ingredient.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_03_Ingredient.png",
+    "Size Bytes": 3891517,
+    "Size MB": 3.711,
+    "Last Modified": 46264.14221523148,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_03_Ingredient.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_04_Nutrition.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_04_Nutrition.png",
+    "Size Bytes": 4522558,
+    "Size MB": 4.313,
+    "Last Modified": 46264.14223480324,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_04_Nutrition.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_05_WoodPressedVsRefined.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_05_WoodPressedVsRefined.png",
+    "Size Bytes": 1768392,
+    "Size MB": 1.686,
+    "Last Modified": 46264.14224883102,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_05_WoodPressedVsRefined.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_06_Cooking.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_06_Cooking.png",
+    "Size Bytes": 7500720,
+    "Size MB": 7.153,
+    "Last Modified": 46264.14234210648,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_06_Cooking.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_07_ListingVideo_1x1.png",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_07_ListingVideo_1x1.png",
+    "Size Bytes": 3699999,
+    "Size MB": 3.529,
+    "Last Modified": 46264.14230548611,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_07_ListingVideo_1x1.png"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_ProductPage_16x9.mp4",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_ProductPage_16x9.mp4",
+    "Size Bytes": 17550572,
+    "Size MB": 16.738,
+    "Last Modified": 46264.14243506944,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_UGC01_ProblemSwitch_Sneha_9x16.mp4",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_UGC01_ProblemSwitch_Sneha_9x16.mp4",
+    "Size Bytes": 20088647,
+    "Size MB": 19.158,
+    "Last Modified": 46264.1423682176,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_UGC01_ProblemSwitch_Sneha_9x16.mp4"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_UGC02_FoodBlogger_Tanvi_9x16.mp4",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_UGC02_FoodBlogger_Tanvi_9x16.mp4",
+    "Size Bytes": 18631696,
+    "Size MB": 17.769,
+    "Last Modified": 46264.14234306713,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_UGC02_FoodBlogger_Tanvi_9x16.mp4"
+  },
+  {
+    "Object Key": "ground-nut-oil-assets/EKAS_Groundnut_UGC03_Nutritionist_Ishita_9x16.mp4",
+    "Folder": "ground-nut-oil-assets",
+    "Filename": "EKAS_Groundnut_UGC03_Nutritionist_Ishita_9x16.mp4",
+    "Size Bytes": 15835092,
+    "Size MB": 15.102,
+    "Last Modified": 46264.14247327546,
+    "Public URL": "https://ekas-assets.triodesolutions.com/ground-nut-oil-assets/EKAS_Groundnut_UGC03_Nutritionist_Ishita_9x16.mp4"
+  },
+  {
+    "Object Key": "homepage-assets/",
+    "Folder": "homepage-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.19706350694,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/"
+  },
+  {
+    "Object Key": "homepage-assets/EKAS_Homepage_01_Hero_OilDrop.mp4",
+    "Folder": "homepage-assets",
+    "Filename": "EKAS_Homepage_01_Hero_OilDrop.mp4",
+    "Size Bytes": 47594654,
+    "Size MB": 45.39,
+    "Last Modified": 46264.19778420139,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_01_Hero_OilDrop.mp4"
+  },
+  {
+    "Object Key": "homepage-assets/EKAS_Homepage_02_Hero_OilBubbles.mp4",
+    "Folder": "homepage-assets",
+    "Filename": "EKAS_Homepage_02_Hero_OilBubbles.mp4",
+    "Size Bytes": 25896404,
+    "Size MB": 24.697,
+    "Last Modified": 46264.19764396991,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_02_Hero_OilBubbles.mp4"
+  },
+  {
+    "Object Key": "homepage-assets/EKAS_Homepage_03_ProductRange.png",
+    "Folder": "homepage-assets",
+    "Filename": "EKAS_Homepage_03_ProductRange.png",
+    "Size Bytes": 2205431,
+    "Size MB": 2.103,
+    "Last Modified": 46264.19744366898,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_03_ProductRange.png"
+  },
+  {
+    "Object Key": "homepage-assets/EKAS_Homepage_04_LabTested.png",
+    "Folder": "homepage-assets",
+    "Filename": "EKAS_Homepage_04_LabTested.png",
+    "Size Bytes": 5263306,
+    "Size MB": 5.019,
+    "Last Modified": 46264.1974768287,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_04_LabTested.png"
+  },
+  {
+    "Object Key": "homepage-assets/EKAS_Homepage_05_DiwaliOffer_20Percent.png",
+    "Folder": "homepage-assets",
+    "Filename": "EKAS_Homepage_05_DiwaliOffer_20Percent.png",
+    "Size Bytes": 1522087,
+    "Size MB": 1.452,
+    "Last Modified": 46264.19743462963,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_05_DiwaliOffer_20Percent.png"
+  },
+  {
+    "Object Key": "homepage-assets/EKAS_Homepage_06_DiwaliBackground.png",
+    "Folder": "homepage-assets",
+    "Filename": "EKAS_Homepage_06_DiwaliBackground.png",
+    "Size Bytes": 17363991,
+    "Size MB": 16.56,
+    "Last Modified": 46264.19758665509,
+    "Public URL": "https://ekas-assets.triodesolutions.com/homepage-assets/EKAS_Homepage_06_DiwaliBackground.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/",
+    "Folder": "mustard-oil-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.16948391204,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_01_Hero_1L.png",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_01_Hero_1L.png",
+    "Size Bytes": 4831096,
+    "Size MB": 4.607,
+    "Last Modified": 46264.17135465278,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_01_Hero_1L.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_02_LabTested.png",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_02_LabTested.png",
+    "Size Bytes": 5118423,
+    "Size MB": 4.881,
+    "Last Modified": 46264.17143238426,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_02_LabTested.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_03_Ingredient.png",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_03_Ingredient.png",
+    "Size Bytes": 4974119,
+    "Size MB": 4.744,
+    "Last Modified": 46264.17143309028,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_03_Ingredient.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_04_Nutrition.png",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_04_Nutrition.png",
+    "Size Bytes": 4697398,
+    "Size MB": 4.48,
+    "Last Modified": 46264.17144622685,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_04_Nutrition.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_05_WoodPressedVsRefined.png",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_05_WoodPressedVsRefined.png",
+    "Size Bytes": 4291038,
+    "Size MB": 4.092,
+    "Last Modified": 46264.17143422454,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_05_WoodPressedVsRefined.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_06_Cooking.png",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_06_Cooking.png",
+    "Size Bytes": 7915129,
+    "Size MB": 7.548,
+    "Last Modified": 46264.17122800926,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_06_Cooking.png"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_07_ListingVideo_1x1.mp4",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_07_ListingVideo_1x1.mp4",
+    "Size Bytes": 8987169,
+    "Size MB": 8.571,
+    "Last Modified": 46264.17123018519,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_07_ListingVideo_1x1.mp4"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_07_ListingVideo_1x1_Variant02.mp4",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_07_ListingVideo_1x1_Variant02.mp4",
+    "Size Bytes": 9130588,
+    "Size MB": 8.708,
+    "Last Modified": 46264.17136616898,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_07_ListingVideo_1x1_Variant02.mp4"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_ProductPage_16x9.mp4",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_ProductPage_16x9.mp4",
+    "Size Bytes": 21073461,
+    "Size MB": 20.097,
+    "Last Modified": 46264.17146233796,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_UGC01_StateDish_WestBengal_9x16.mp4",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_UGC01_StateDish_WestBengal_9x16.mp4",
+    "Size Bytes": 18932578,
+    "Size MB": 18.056,
+    "Last Modified": 46264.17135479167,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_UGC01_StateDish_WestBengal_9x16.mp4"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_UGC02_TwoGenerations_unfinished_9x16.mp4",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_UGC02_TwoGenerations_unfinished_9x16.mp4",
+    "Size Bytes": 13479102,
+    "Size MB": 12.855,
+    "Last Modified": 46264.17128219907,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_UGC02_TwoGenerations_unfinished_9x16.mp4"
+  },
+  {
+    "Object Key": "mustard-oil-assets/EKAS_Mustard_UGC03_UserReview_9x16.mp4",
+    "Folder": "mustard-oil-assets",
+    "Filename": "EKAS_Mustard_UGC03_UserReview_9x16.mp4",
+    "Size Bytes": 19245031,
+    "Size MB": 18.353,
+    "Last Modified": 46264.17135251158,
+    "Public URL": "https://ekas-assets.triodesolutions.com/mustard-oil-assets/EKAS_Mustard_UGC03_UserReview_9x16.mp4"
+  },
+  {
+    "Object Key": "sesame-oil-assets/",
+    "Folder": "sesame-oil-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.16273287037,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_01_Hero_1L.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_01_Hero_1L.png",
+    "Size Bytes": 4119266,
+    "Size MB": 3.928,
+    "Last Modified": 46264.1671409375,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_01_Hero_1L.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_01_Hero_500ml.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_01_Hero_500ml.png",
+    "Size Bytes": 979029,
+    "Size MB": 0.934,
+    "Last Modified": 46264.1671621412,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_01_Hero_500ml.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_01_Hero_5L.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_01_Hero_5L.png",
+    "Size Bytes": 1113062,
+    "Size MB": 1.061,
+    "Last Modified": 46264.16715314815,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_01_Hero_5L.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_02_LabTested.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_02_LabTested.png",
+    "Size Bytes": 5017057,
+    "Size MB": 4.785,
+    "Last Modified": 46264.16696362269,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_02_LabTested.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_03_Ingredient.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_03_Ingredient.png",
+    "Size Bytes": 4674929,
+    "Size MB": 4.458,
+    "Last Modified": 46264.16695638889,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_03_Ingredient.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_04_Nutrition.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_04_Nutrition.png",
+    "Size Bytes": 4477307,
+    "Size MB": 4.27,
+    "Last Modified": 46264.16703791667,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_04_Nutrition.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_05_WoodPressedVsRefined.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_05_WoodPressedVsRefined.png",
+    "Size Bytes": 5003621,
+    "Size MB": 4.772,
+    "Last Modified": 46264.16704613426,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_05_WoodPressedVsRefined.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_06_Cooking.png",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_06_Cooking.png",
+    "Size Bytes": 5593676,
+    "Size MB": 5.335,
+    "Last Modified": 46264.16712929398,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_06_Cooking.png"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_07_ListingVideo_1x1.mp4",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_07_ListingVideo_1x1.mp4",
+    "Size Bytes": 7852431,
+    "Size MB": 7.489,
+    "Last Modified": 46264.16715572917,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_07_ListingVideo_1x1.mp4"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_ProductPage_16x9.mp4",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_ProductPage_16x9.mp4",
+    "Size Bytes": 17400719,
+    "Size MB": 16.595,
+    "Last Modified": 46264.16720334491,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_UGC01_StateDish_TamilNadu_9x16.mp4",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_UGC01_StateDish_TamilNadu_9x16.mp4",
+    "Size Bytes": 20441470,
+    "Size MB": 19.495,
+    "Last Modified": 46264.16715870371,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_UGC01_StateDish_TamilNadu_9x16.mp4"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_UGC02_ResearchDiary_Day28_9x16.mp4",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_UGC02_ResearchDiary_Day28_9x16.mp4",
+    "Size Bytes": 15528900,
+    "Size MB": 14.81,
+    "Last Modified": 46264.16707327546,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_UGC02_ResearchDiary_Day28_9x16.mp4"
+  },
+  {
+    "Object Key": "sesame-oil-assets/EKAS_Sesame_UGC03_Nutritionist_Priya_9x16.mp4",
+    "Folder": "sesame-oil-assets",
+    "Filename": "EKAS_Sesame_UGC03_Nutritionist_Priya_9x16.mp4",
+    "Size Bytes": 13218913,
+    "Size MB": 12.607,
+    "Last Modified": 46264.16705875,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sesame-oil-assets/EKAS_Sesame_UGC03_Nutritionist_Priya_9x16.mp4"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/",
+    "Folder": "sunflower-oil-assets",
+    "Size Bytes": 0,
+    "Size MB": 0,
+    "Last Modified": 46264.14661618056,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_01_Hero_1L.png",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_01_Hero_1L.png",
+    "Size Bytes": 3972266,
+    "Size MB": 3.788,
+    "Last Modified": 46264.16233526621,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_01_Hero_1L.png"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_02_LabTested.png",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_02_LabTested.png",
+    "Size Bytes": 4559386,
+    "Size MB": 4.348,
+    "Last Modified": 46264.1624074537,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_02_LabTested.png"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_03_Ingredient.png",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_03_Ingredient.png",
+    "Size Bytes": 4398309,
+    "Size MB": 4.195,
+    "Last Modified": 46264.16241471065,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_03_Ingredient.png"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_04_Nutrition.png",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_04_Nutrition.png",
+    "Size Bytes": 4472837,
+    "Size MB": 4.266,
+    "Last Modified": 46264.16245178241,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_04_Nutrition.png"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_05_WoodPressedVsRefined.png",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_05_WoodPressedVsRefined.png",
+    "Size Bytes": 4167509,
+    "Size MB": 3.974,
+    "Last Modified": 46264.16212320602,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_05_WoodPressedVsRefined.png"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_06_Cooking.png",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_06_Cooking.png",
+    "Size Bytes": 5485447,
+    "Size MB": 5.231,
+    "Last Modified": 46264.16216186342,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_06_Cooking.png"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_07_ListingVideo_1x1.mp4",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_07_ListingVideo_1x1.mp4",
+    "Size Bytes": 7086761,
+    "Size MB": 6.758,
+    "Last Modified": 46264.1622561574,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_07_ListingVideo_1x1.mp4"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_ProductPage_16x9.mp4",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_ProductPage_16x9.mp4",
+    "Size Bytes": 18776196,
+    "Size MB": 17.906,
+    "Last Modified": 46264.16245106482,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_ProductPage_16x9.mp4"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_UGC01_StateDish_9x16.mp4",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_UGC01_StateDish_9x16.mp4",
+    "Size Bytes": 23823184,
+    "Size MB": 22.72,
+    "Last Modified": 46264.16242111111,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_UGC01_StateDish_9x16.mp4"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_UGC02_ResearchDiary_9x16.mp4",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_UGC02_ResearchDiary_9x16.mp4",
+    "Size Bytes": 17463355,
+    "Size MB": 16.654,
+    "Last Modified": 46264.16235268518,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_UGC02_ResearchDiary_9x16.mp4"
+  },
+  {
+    "Object Key": "sunflower-oil-assets/EKAS_Sunflower_UGC03_Comparison_9x16.mp4",
+    "Folder": "sunflower-oil-assets",
+    "Filename": "EKAS_Sunflower_UGC03_Comparison_9x16.mp4",
+    "Size Bytes": 23545086,
+    "Size MB": 22.454,
+    "Last Modified": 46264.16243350694,
+    "Public URL": "https://ekas-assets.triodesolutions.com/sunflower-oil-assets/EKAS_Sunflower_UGC03_Comparison_9x16.mp4"
+  }
+]
