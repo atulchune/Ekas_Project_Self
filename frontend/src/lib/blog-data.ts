@@ -7,6 +7,7 @@ export interface BlogPost {
     date: string;
     category: "Recipes" | "Health Benefits" | "General";
     image: string;
+    readTime?: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [

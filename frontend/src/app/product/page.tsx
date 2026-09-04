@@ -9,6 +9,7 @@ import { useSearchParams } from "next/navigation";
 import { useCart } from "@/context/CartContext";
 import { useFavorites } from "@/context/FavoritesContext";
 import { cn } from "@/lib/utils";
+import { ProductCard } from "@/components/ui/ProductCard";
 
 function ShopContent() {
     const { addItem } = useCart();
@@ -21,7 +22,7 @@ function ShopContent() {
     const [searchQuery, setSearchQuery] = useState(initialSearch);
     const [selectedBestFor, setSelectedBestFor] = useState<string[]>([]);
     const [selectedSizes, setSelectedSizes] = useState<string[]>([]);
-    const [maxPrice, setMaxPrice] = useState<number>(899);
+    const [maxPrice, setMaxPrice] = useState<number>(4000);
     const [inStockOnly, setInStockOnly] = useState(false);
 
     // Quick View State
@@ -43,7 +44,7 @@ function ShopContent() {
         setSearchQuery("");
         setSelectedBestFor([]);
         setSelectedSizes([]);
-        setMaxPrice(899);
+        setMaxPrice(4000);
         setInStockOnly(false);
     };
 
@@ -65,7 +66,7 @@ function ShopContent() {
             if (inStockOnly && !p.inStock) return false;
             
             // Price (using first size for simplicity)
-            if (p.sizes[0].price > maxPrice) return false;
+            if (maxPrice < 4000 && p.sizes[0].price > maxPrice) return false;
 
             // Note: BestFor and Sizes are mocked filters for the UI layout showcase
             // In a real app, we'd map these to specific product properties.
@@ -143,18 +144,18 @@ function ShopContent() {
                         <div className="mb-8">
                             <div className="flex items-center justify-between mb-4">
                                 <h4 className="text-[10px] font-bold text-gray-400 uppercase tracking-widest">Max Price</h4>
-                                <span className="text-[11px] font-bold text-[#1F2937]">₹{maxPrice}+</span>
+                                <span className="text-[11px] font-bold text-[#1F2937]">₹{maxPrice}{maxPrice === 4000 ? '+' : ''}</span>
                             </div>
                             <input 
                                 type="range" 
-                                min="199" max="899" 
+                                min="199" max="4000" 
                                 value={maxPrice}
                                 onChange={(e) => setMaxPrice(Number(e.target.value))}
                                 className="w-full accent-[#2D5C35] h-1 bg-gray-200 rounded-full appearance-none outline-none"
                             />
                             <div className="flex justify-between mt-2 text-[10px] text-gray-400 font-medium">
                                 <span>₹199</span>
-                                <span>₹899+</span>
+                                <span>₹4000+</span>
                             </div>
                         </div>
 
@@ -207,84 +208,17 @@ function ShopContent() {
 
                         {/* Product Grid */}
                         <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 lg:gap-6">
-                            {filteredProducts.map(product => {
-                                const activeSize = product.sizes[0];
-                                const discount = activeSize.originalPrice ? Math.round(((activeSize.originalPrice - activeSize.price) / activeSize.originalPrice) * 100) : 0;
-                                const secondaryImage = product.gallery[1] || product.image;
-
-                                return (
-                                    <div key={product.id} className="group flex flex-col relative">
-                                        
-                                        {/* Image Container */}
-                                        <Link href={`/product/${product.id}`} className="block relative aspect-[4/5] w-full bg-[#EAE5D9] rounded-2xl overflow-hidden mb-5">
-                                            {/* Primary Image */}
-                                            <Image src={product.image} alt={product.name} fill className="object-cover transition-opacity duration-300 group-hover:opacity-0" />
-                                            {/* Secondary Hover Image */}
-                                            <Image src={secondaryImage} alt={product.name} fill className="object-cover absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-                                            
-                                            {/* Badges */}
-                                            <div className="absolute top-3 left-3 z-10 flex flex-col gap-2">
-                                                {product.badge && <span className="bg-[#17301A] text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">{product.badge}</span>}
-                                            </div>
-                                            {discount > 0 && (
-                                                <div className="absolute top-3 right-3 z-10">
-                                                    <span className="bg-[#B08955] text-white text-[9px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">{discount}% off</span>
-                                                </div>
-                                            )}
-
-                                            {/* Action Icons Container */}
-                                            <div className="absolute bottom-3 right-3 z-20 flex items-center gap-2">
-                                                {/* Quick View Eye Button */}
-                                                <button 
-                                                    onClick={(e) => { e.preventDefault(); setQuickViewProduct(product); setQuickViewSizeIndex(0); }}
-                                                    className="bg-white/95 backdrop-blur p-2.5 rounded-full shadow-md opacity-0 group-hover:opacity-100 transition-all duration-300 hover:scale-110 text-[#17301A]"
-                                                >
-                                                    <Eye className="w-4 h-4" />
-                                                </button>
-
-                                                {/* Favorite Heart Button */}
-                                                <button 
-                                                    onClick={(e) => { e.preventDefault(); toggleFavorite(product.id); }}
-                                                    className="bg-white p-2.5 rounded-full shadow-md hover:scale-105 transition-all text-gray-400 hover:text-red-500"
-                                                >
-                                                    <Heart className={cn("w-4 h-4", isFavorite(product.id) && "fill-red-500 text-red-500")} />
-                                                </button>
-                                            </div>
-                                        </Link>
-
-                                        {/* Product Details */}
-                                        <div className="flex justify-between items-start mb-1 text-[8px] font-bold uppercase tracking-widest text-gray-400">
-                                            <div className="flex items-center gap-1 text-gray-500">
-                                                <Star className="w-2.5 h-2.5 fill-[#D9A528] text-[#D9A528]" /> 
-                                                <span className="text-gray-800">{product.rating}</span> 
-                                            </div>
-                                            <span>{activeSize.label}</span>
-                                        </div>
-
-                                        <Link href={`/product/${product.id}`} className="block">
-                                            <h3 className="font-serif text-[15px] font-bold text-[#1F2937] mb-1 group-hover:text-[#2D5C35] transition-colors line-clamp-1">{product.name}</h3>
-                                            <p className="text-[11px] text-gray-500 mb-3 h-4 line-clamp-1 leading-relaxed truncate">{product.shortDescription}</p>
-                                        </Link>
-
-                                        <div className="flex items-center gap-1.5 mb-4">
-                                            <span className="text-base font-bold text-[#1F2937]">₹{activeSize.price}</span>
-                                            {activeSize.originalPrice && (
-                                                <span className="text-[10px] text-gray-400 line-through">₹{activeSize.originalPrice}</span>
-                                            )}
-                                        </div>
-
-                                        {/* Action Buttons */}
-                                        <div className="flex gap-2 mt-auto">
-                                            <button 
-                                                onClick={() => addItem(product, 1, activeSize.label, activeSize.price)}
-                                                className="flex-1 bg-[#17301A] hover:bg-[#2D5C35] text-white text-[10px] font-bold uppercase tracking-widest py-2.5 rounded-lg transition-colors shadow-sm"
-                                            >
-                                                ADD TO CART
-                                            </button>
-                                        </div>
-                                    </div>
-                                );
-                            })}
+                            {filteredProducts.map((product, index) => (
+                                <ProductCard 
+                                    key={product.id} 
+                                    product={product as any} 
+                                    index={index} 
+                                    onQuickView={() => { 
+                                        setQuickViewProduct(product as any); 
+                                        setQuickViewSizeIndex(0); 
+                                    }} 
+                                />
+                            ))}
                         </div>
                         
                         {filteredProducts.length === 0 && (

@@ -65,15 +65,15 @@
   --spacing-container-max: 1440px;
 
   /* Font Families */
-  --font-label-caps: "Inter", sans-serif;
-  --font-body-md: "Inter", sans-serif;
-  --font-quote: "Playfair Display", serif;
-  --font-headline-lg-mobile: "Playfair Display", serif;
-  --font-display-lg-mobile: "Playfair Display", serif;
-  --font-headline-md: "Playfair Display", serif;
-  --font-headline-lg: "Playfair Display", serif;
-  --font-display-lg: "Playfair Display", serif;
-  --font-body-lg: "Inter", sans-serif;
+  --font-label-caps: var(--font-playfair, "Playfair Display", serif);
+  --font-body-md: var(--font-playfair, "Playfair Display", serif);
+  --font-quote: var(--font-playfair, "Playfair Display", serif);
+  --font-headline-lg-mobile: var(--font-playfair, "Playfair Display", serif);
+  --font-display-lg-mobile: var(--font-playfair, "Playfair Display", serif);
+  --font-headline-md: var(--font-playfair, "Playfair Display", serif);
+  --font-headline-lg: var(--font-playfair, "Playfair Display", serif);
+  --font-display-lg: var(--font-playfair, "Playfair Display", serif);
+  --font-body-lg: var(--font-playfair, "Playfair Display", serif);
 
   /* Font Sizes */
   --text-label-caps: 12px;
@@ -169,5 +169,24 @@
   /* Smooth section transitions */
   section {
       transition: background-color 0.8s ease;
+  }
+
+  /* Custom Main Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: var(--color-background);
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-primary-fixed-dim);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-on-primary-fixed-variant);
   }
 }

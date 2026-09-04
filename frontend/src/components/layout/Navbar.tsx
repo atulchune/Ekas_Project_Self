@@ -29,9 +29,9 @@ export function Navbar() {
 
   const navLinks = [
     { name: "Home", href: "/" },
-    { name: "Shop", href: "/shop" },
+    { name: "Products", href: "/product" },
     { name: "Our Story", href: "/our-story" },
-    { name: "Journal", href: "/journal" },
+    { name: "Blogs", href: "/blogs" },
   ];
 
   return (
@@ -89,6 +89,7 @@ export function Navbar() {
                   priority
                   unoptimized
                   className="object-contain object-center transition-all duration-300"
+                  style={{ filter: "brightness(0) saturate(100%) invert(14%) sepia(32%) saturate(996%) hue-rotate(81deg) brightness(91%) contrast(92%)" }}
                 />
               </div>
             </Link>

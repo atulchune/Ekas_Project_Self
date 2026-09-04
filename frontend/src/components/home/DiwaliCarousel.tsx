@@ -9,9 +9,24 @@ export function DiwaliCarousel() {
   const [currentIndex, setCurrentIndex] = useState(0);
   
   const slides = [
-    getAssetUrl("EKAS_Homepage_05_DiwaliOffer_20Percent.png"),
-    getAssetUrl("EKAS_Homepage_06_DiwaliBackground.png"),
-    getAssetUrl("EKAS_Homepage_05_DiwaliOffer_20Percent.png"),
+    {
+      image: "/images/diwali_offer_20.jpg",
+      offer: "FESTIVE OFFER — 20% OFF",
+      title: "A Brighter Festive Season, Naturally",
+      desc: "Illuminate your home with the purity of ancestral traditions. Our wood-pressed oils bring health and radiance to every festive meal."
+    },
+    {
+      image: "/images/diwali_bogo.jpg",
+      offer: "DIWALI SPECIAL — BUY 1 GET 1 FREE",
+      title: "Double the Purity, Double the Joy",
+      desc: "Stock up on wellness this Diwali. Buy any wood-pressed oil and get a second one absolutely free for a limited time."
+    },
+    {
+      image: "/images/diwali_free_shipping.jpg",
+      offer: "FESTIVE PERK — FREE SHIPPING",
+      title: "Delivered Fresh From Our Mill",
+      desc: "Enjoy complimentary shipping on all orders over ₹999. Let the essence of tradition reach your doorstep this festive season."
+    }
   ];
 
   const nextSlide = () => {
@@ -52,7 +67,7 @@ export function DiwaliCarousel() {
       <div className="max-w-[var(--spacing-container-max)] mx-auto px-[var(--spacing-margin-mobile)] md:px-[var(--spacing-margin-desktop)]">
         <div className="relative h-[600px] md:h-[500px] overflow-hidden rounded-lg">
           
-          {slides.map((image, index) => (
+          {slides.map((slide, index) => (
             <div 
               key={index}
               className={`absolute inset-0 flex flex-col md:flex-row transition-opacity duration-1000 ease-in-out ${
@@ -61,13 +76,13 @@ export function DiwaliCarousel() {
             >
               <div className="w-full md:w-1/2 bg-surface-container-low p-10 md:p-20 flex flex-col justify-center">
                 <span className="font-label-caps text-[length:var(--text-label-caps)] text-[#B88A2A] font-semibold mb-4 tracking-widest uppercase">
-                  FESTIVE OFFER — 20% OFF
+                  {slide.offer}
                 </span>
                 <h2 className="font-headline-lg text-[length:var(--text-headline-lg-mobile)] md:text-[length:var(--text-headline-lg)] text-primary-container mb-6 leading-tight">
-                  A Brighter Festive Season, Naturally
+                  {slide.title}
                 </h2>
                 <p className="font-body-md text-[length:var(--text-body-md)] text-on-surface-variant max-w-md mb-8">
-                  Illuminate your home with the purity of ancestral traditions. Our wood-pressed oils bring health and radiance to every festive meal.
+                  {slide.desc}
                 </p>
                 <Link href="/shop" className="inline-block w-fit font-label-caps text-[length:var(--text-label-caps)] font-semibold tracking-widest uppercase text-primary border-b border-primary pb-1 hover:text-secondary hover:border-secondary transition-colors">
                   SHOP THE COLLECTION
@@ -75,7 +90,7 @@ export function DiwaliCarousel() {
               </div>
               <div 
                 className="w-full md:w-1/2 bg-cover bg-center bg-no-repeat" 
-                style={{ backgroundImage: `url('${image}')` }}
+                style={{ backgroundImage: `url('${slide.image}')` }}
               ></div>
             </div>
           ))}

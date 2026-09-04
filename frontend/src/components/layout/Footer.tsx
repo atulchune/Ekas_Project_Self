@@ -46,9 +46,9 @@ export function Footer() {
             {/* Shop Column */}
             <div className="flex flex-col space-y-4">
               <h4 className="font-label-caps text-[12px] font-bold text-[#d2ad4f] tracking-widest mb-4 uppercase">Shop</h4>
-              <Link href="/shop" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">All Products</Link>
-              <Link href="/shop?category=wood-pressed" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">Cold Pressed Oils</Link>
-              <Link href="/shop?category=ghee" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">Organic Ghee</Link>
+              <Link href="/product" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">All Products</Link>
+              <Link href="/product?category=wood-pressed" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">Cold Pressed Oils</Link>
+              <Link href="/product?category=ghee" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">Organic Ghee</Link>
               <Link href="/bundles" className="text-[14px] text-[#e2dfd5] hover:text-white transition-colors">Gift Combos</Link>
             </div>
 
