@@ -15,17 +15,18 @@ import React from 'react';
 
 const UgcVideo = ({ src, isPlaying, isMuted, onTogglePlay, onToggleMute }: { src: string, isPlaying: boolean, isMuted: boolean, onTogglePlay: () => void, onToggleMute: () => void }) => {
     const videoRef = React.useRef<HTMLVideoElement>(null);
-    
+
+
     React.useEffect(() => {
         if (isPlaying) {
-            videoRef.current?.play().catch(() => {});
+            videoRef.current?.play().catch(() => { });
         } else {
             videoRef.current?.pause();
         }
     }, [isPlaying]);
 
     return (
-        <div 
+        <div
             className="relative aspect-[4/5] bg-[#F9F7F2] rounded-xl overflow-hidden border border-gray-200/50 group cursor-pointer hover:shadow-md transition-all"
             onClick={onTogglePlay}
         >
@@ -45,19 +46,19 @@ const UgcVideo = ({ src, isPlaying, isMuted, onTogglePlay, onToggleMute }: { src
                     </div>
                 </div>
             )}
-            
+
             {/* Controls overlay when playing (shows on hover) */}
             {isPlaying && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2">
                     <div className="flex justify-between items-center">
-                        <button 
-                            onClick={(e) => { e.stopPropagation(); onTogglePlay(); }} 
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onTogglePlay(); }}
                             className="w-7 h-7 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
                         >
                             <Pause className="w-3 h-3" fill="currentColor" />
                         </button>
-                        <button 
-                            onClick={(e) => { e.stopPropagation(); onToggleMute(); }} 
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onToggleMute(); }}
                             className="w-7 h-7 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
                         >
                             {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
@@ -251,12 +252,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                                     >
                                         <div className="relative w-full h-full overflow-hidden rounded-3xl">
                                             {isVideo(activeMedia) ? (
-                                                <video 
-                                                    src={activeMedia} 
-                                                    className="w-full h-full object-cover" 
-                                                    autoPlay 
-                                                    loop 
-                                                    muted 
+                                                <video
+                                                    src={activeMedia}
+                                                    className="w-full h-full object-cover"
+                                                    autoPlay
+                                                    loop
+                                                    muted
                                                     playsInline
                                                 />
                                             ) : (
