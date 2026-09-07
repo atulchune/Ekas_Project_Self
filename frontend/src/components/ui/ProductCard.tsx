@@ -23,7 +23,7 @@ export function ProductCard({ product, index = 0, onQuickView }: { product: Prod
     return (
         <div className="group bg-white flex flex-col h-full border border-gray-100 shadow-sm transition-all duration-300 hover:shadow-md">
             {/* Image Container */}
-            <Link href={`/product/${product.slug}`} className="relative w-full aspect-[4/5] bg-gradient-to-b from-[#F2EDDF] to-[#E3D4BE] cursor-pointer overflow-hidden block">
+            <Link href={`/product/${product.slug}`} className="relative w-full aspect-square bg-gradient-to-b from-[#F2EDDF] to-[#E3D4BE] cursor-pointer overflow-hidden block">
                 {/* Badge */}
                 <div className="absolute top-4 left-4 z-20">
                     <div className="bg-white text-[#17301A] text-[9px] font-bold px-2.5 py-1 rounded-[2px] uppercase tracking-widest shadow-sm">
@@ -49,7 +49,7 @@ export function ProductCard({ product, index = 0, onQuickView }: { product: Prod
                     src={product.image}
                     alt={`${product.name}`}
                     fill
-                    className="object-cover transition-transform duration-700 ease-in-out opacity-100 group-hover:opacity-0 group-hover:scale-110"
+                    className="object-contain p-4 transition-opacity duration-700 ease-in-out opacity-100 group-hover:opacity-0"
                 />
 
                 {/* Hover Image (Lab Tested / Secondary) */}
@@ -57,7 +57,7 @@ export function ProductCard({ product, index = 0, onQuickView }: { product: Prod
                     src={product.images?.gallery?.[1] || product.gallery?.[1] || product.image}
                     alt={`${product.name} Details`}
                     fill
-                    className="object-cover transition-transform duration-700 ease-in-out opacity-0 group-hover:opacity-100 group-hover:scale-105"
+                    className="object-contain p-4 transition-opacity duration-700 ease-in-out opacity-0 group-hover:opacity-100"
                 />
             </Link>
 
