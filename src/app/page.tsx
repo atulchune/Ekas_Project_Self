@@ -18,8 +18,8 @@ export default function Home() {
       <QuickShop />
       <FinalCTA />
       <Heritage />
-      <FAQ />
       <LabTested />
+      <FAQ />
     </>
   );
 }

@@ -15,18 +15,19 @@ import React from 'react';
 
 const UgcVideo = ({ src, isPlaying, isMuted, onTogglePlay, onToggleMute }: { src: string, isPlaying: boolean, isMuted: boolean, onTogglePlay: () => void, onToggleMute: () => void }) => {
     const videoRef = React.useRef<HTMLVideoElement>(null);
-    
+
+
     React.useEffect(() => {
         if (isPlaying) {
-            videoRef.current?.play().catch(() => {});
+            videoRef.current?.play().catch(() => { });
         } else {
             videoRef.current?.pause();
         }
     }, [isPlaying]);
 
     return (
-        <div 
-            className="relative aspect-[4/5] bg-[#F9F7F2] rounded-xl overflow-hidden border border-gray-200/50 group cursor-pointer hover:shadow-md transition-all"
+        <div
+            className="relative aspect-[9/16] bg-[#F9F7F2] rounded-xl overflow-hidden border border-gray-200/50 group cursor-pointer hover:shadow-md transition-all w-full"
             onClick={onTogglePlay}
         >
             <video
@@ -45,19 +46,19 @@ const UgcVideo = ({ src, isPlaying, isMuted, onTogglePlay, onToggleMute }: { src
                     </div>
                 </div>
             )}
-            
+
             {/* Controls overlay when playing (shows on hover) */}
             {isPlaying && (
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-2">
                     <div className="flex justify-between items-center">
-                        <button 
-                            onClick={(e) => { e.stopPropagation(); onTogglePlay(); }} 
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onTogglePlay(); }}
                             className="w-7 h-7 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
                         >
                             <Pause className="w-3 h-3" fill="currentColor" />
                         </button>
-                        <button 
-                            onClick={(e) => { e.stopPropagation(); onToggleMute(); }} 
+                        <button
+                            onClick={(e) => { e.stopPropagation(); onToggleMute(); }}
                             className="w-7 h-7 bg-white/20 hover:bg-white/40 backdrop-blur-md rounded-full flex items-center justify-center text-white transition-colors"
                         >
                             {isMuted ? <VolumeX className="w-3.5 h-3.5" /> : <Volume2 className="w-3.5 h-3.5" />}
@@ -88,6 +89,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     // FAQ state
     const [faqSearch, setFaqSearch] = useState("");
     const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
+
+    // Nutrition Modal state
+    const [showNutritionModal, setShowNutritionModal] = useState(false);
 
     // Sticky Bar state
     const [showStickyBar, setShowStickyBar] = useState(false);
@@ -163,8 +167,8 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
     const saveAmount = activeSize.originalPrice ? activeSize.originalPrice - activeSize.price : 0;
 
     // Helper for per litre calculation
-    const getPerLitrePrice = () => {
-        const sizeLabel = activeSize.label.toLowerCase();
+    const getPerLitrePrice = (sizeObj = activeSize) => {
+        const sizeLabel = sizeObj.label.toLowerCase();
         let volumeMl = 1000;
         if (sizeLabel.includes('ml')) {
             volumeMl = parseInt(sizeLabel);
@@ -172,9 +176,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
             volumeMl = parseInt(sizeLabel.replace(/[^\d]/g, '')) * 1000;
         }
         if (volumeMl > 0) {
-            return Math.round((activeSize.price / volumeMl) * 1000);
+            return Math.round((sizeObj.price / volumeMl) * 1000);
         }
-        return activeSize.price;
+        return sizeObj.price;
     };
 
     const MARQUEE_TEXTS = [
@@ -251,12 +255,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                                     >
                                         <div className="relative w-full h-full overflow-hidden rounded-3xl">
                                             {isVideo(activeMedia) ? (
-                                                <video 
-                                                    src={activeMedia} 
-                                                    className="w-full h-full object-cover" 
-                                                    autoPlay 
-                                                    loop 
-                                                    muted 
+                                                <video
+                                                    src={activeMedia}
+                                                    className="w-full h-full object-cover"
+                                                    autoPlay
+                                                    loop
+                                                    muted
                                                     playsInline
                                                 />
                                             ) : (
@@ -332,12 +336,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                             <h1 className="text-3xl lg:text-4xl font-bold font-serif text-[#1F2937] leading-tight mb-2 tracking-tight">
                                 {product.name}
                             </h1>
-                            <p className="text-sm text-gray-600 leading-relaxed font-medium mb-4 max-w-xl line-clamp-3">
+                            <p className="text-sm text-gray-600 leading-relaxed font-medium mb-3 max-w-xl line-clamp-3">
                                 {product.description}
                             </p>
 
                             {/* Price */}
-                            <div className="flex flex-col mb-4">
+                            <div className="flex flex-col mb-3">
                                 <div className="flex items-end gap-3 mb-1">
                                     <span className="text-3xl font-bold text-[#1F2937]">₹{activeSize.price}</span>
                                     {activeSize.originalPrice && (
@@ -352,26 +356,98 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                                 <span className="text-[11px] text-gray-500 font-medium">₹{getPerLitrePrice()} per litre - Inclusive of all taxes</span>
                             </div>
 
-                            {/* Size Selector */}
-                            <div className="mb-8">
-                                <div className="flex items-center justify-between mb-4">
-                                    <span className="text-[10px] font-bold text-gray-500 uppercase tracking-widest">SELECT SIZE</span>
+                            {/* Purity Coins Banner */}
+                            <div className="bg-[#EAF5E5] rounded-lg px-4 py-2.5 flex items-center gap-3 mb-4 inline-flex max-w-full">
+                                <span className="text-xl shrink-0 leading-none">🪙</span>
+                                <span className="text-[#2D5C35] text-[13px] font-medium leading-snug">
+                                    Buy now & earn <strong className="font-bold">101</strong> Purity Coins instantly
+                                </span>
+                            </div>
+
+                            {/* Best Price Tag */}
+                            <div className="mb-4">
+                                <style>{`
+                                    @keyframes badge-enter {
+                                        0% { opacity: 0; transform: translateY(-4px) scale(0.97); }
+                                        100% { opacity: 1; transform: translateY(0) scale(1); }
+                                    }
+                                    @keyframes shimmer-sweep {
+                                        0% { left: -40%; opacity: 0; }
+                                        5% { opacity: 1; }
+                                        45% { left: 120%; opacity: 1; }
+                                        46% { opacity: 0; }
+                                        100% { left: 120%; opacity: 0; }
+                                    }
+                                    @media (prefers-reduced-motion: reduce) {
+                                        .badge-animated {
+                                            animation: none !important;
+                                            opacity: 1 !important;
+                                            transform: none !important;
+                                        }
+                                        .badge-shimmer-loop {
+                                            display: none !important;
+                                        }
+                                    }
+                                `}</style>
+                                <div
+                                    className="badge-animated inline-block bg-[#1F3D28] text-white rounded-md relative overflow-hidden shadow-sm hover:scale-[1.015] hover:brightness-110 transition-all duration-200 origin-left cursor-default"
+                                    style={{ animation: 'badge-enter 400ms cubic-bezier(0.2, 0.8, 0.2, 1) forwards' }}
+                                >
+                                    <div className="px-3.5 py-2 flex items-center text-[13px] tracking-wide relative z-10">
+                                        <span className="font-bold">Best Price ₹{Math.round(activeSize.price * 0.85)}</span>
+                                        <span className="ml-1.5 opacity-90 font-medium">with PURE15</span>
+                                    </div>
+                                    <div
+                                        className="badge-shimmer-loop absolute top-0 bottom-0 pointer-events-none z-20"
+                                        style={{
+                                            width: '35%',
+                                            background: 'linear-gradient(105deg, transparent 0%, transparent 30%, rgba(255,255,255,0.25) 45%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0.25) 55%, transparent 70%, transparent 100%)',
+                                            animation: 'shimmer-sweep 3s ease-in-out 0.5s infinite',
+                                        }}
+                                    ></div>
                                 </div>
-                                <div className="flex flex-wrap gap-3">
-                                    {product.sizes.map((size, idx) => (
-                                        <button
-                                            key={idx}
-                                            onClick={() => setSelectedSizeIndex(idx)}
-                                            className={cn(
-                                                "h-[42px] min-w-[52px] px-4 rounded-full flex items-center justify-center transition-all duration-200 text-xs font-bold tracking-wide",
-                                                selectedSizeIndex === idx
-                                                    ? "border-[1.5px] border-[#17301A] text-[#17301A]"
-                                                    : "border border-gray-300 bg-transparent text-gray-600 hover:border-gray-400"
-                                            )}
-                                        >
-                                            <span className="uppercase">{size.label}</span>
-                                        </button>
-                                    ))}
+                            </div>
+
+                            {/* Size Selector */}
+                            <div className="mb-4">
+                                <div className="flex items-center justify-between mb-3">
+                                    <span className="text-[14px] font-bold text-gray-700">Select Variant</span>
+                                </div>
+                                <div className="grid grid-cols-2 lg:grid-cols-4 gap-2.5">
+                                    {product.sizes.map((size, idx) => {
+                                        const isSelected = selectedSizeIndex === idx;
+                                        const perLitre = getPerLitrePrice(size);
+                                        return (
+                                            <button
+                                                key={idx}
+                                                onClick={() => setSelectedSizeIndex(idx)}
+                                                className={cn(
+                                                    "rounded-md border flex flex-col overflow-hidden transition-all duration-200 text-left w-full",
+                                                    isSelected
+                                                        ? "border-[#7DA796] shadow-sm ring-1 ring-[#7DA796]"
+                                                        : "border-gray-200 bg-white hover:border-gray-300"
+                                                )}
+                                            >
+                                                <div className={cn("px-3 py-2 text-[13px] font-medium border-b w-full transition-colors", isSelected ? "bg-[#7DA796] text-white border-[#7DA796]" : "bg-[#F4F5F7] text-[#1F2937] border-gray-200")}>
+                                                    {size.label}
+                                                </div>
+                                                <div className="p-3 bg-white w-full flex-1 flex flex-col justify-center">
+                                                    <div className="flex items-baseline gap-1.5 mb-1 flex-wrap">
+                                                        <span className="text-base font-black text-[#1F2937]">₹{size.price}</span>
+                                                        {size.originalPrice && (
+                                                            <>
+                                                                <span className="text-[11px] text-gray-400 line-through">₹{size.originalPrice}</span>
+                                                                <span className="text-[10px] font-bold text-[#E74C3C]">
+                                                                    {Math.round(((size.originalPrice - size.price) / size.originalPrice) * 100)}% off
+                                                                </span>
+                                                            </>
+                                                        )}
+                                                    </div>
+                                                    <span className="text-[11px] font-bold text-[#2D5C35]">₹{perLitre}/L</span>
+                                                </div>
+                                            </button>
+                                        );
+                                    })}
                                 </div>
                             </div>
 
@@ -420,14 +496,14 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                             </div>
 
                             {/* Divider */}
-                            <div className="w-full h-px bg-gray-200 my-6"></div>
+                            <div className="w-full h-px bg-gray-200 my-8"></div>
 
-                            {/* See It In Real Kitchens (Right Column) */}
+                            {/* See It In Real Kitchens (In Right Column) */}
                             {product.videos?.ugc && product.videos.ugc.length > 0 && (
-                                <div className="w-full mb-4">
-                                    <div className="mb-4">
-                                        <h3 className="text-[13px] font-bold text-[#17301A] mb-1">See It In Real Kitchens</h3>
-                                        <p className="text-[11px] text-gray-500 font-medium">Real people, real cooking, real EKAS.</p>
+                                <div className="w-full mb-8 animate-fade-in">
+                                    <div className="mb-4 text-left">
+                                        <h3 className="text-[22px] font-bold font-serif text-[#17301A] mb-1 tracking-tight">See It In Real Kitchens</h3>
+                                        <p className="text-[12px] text-gray-500 font-medium">Real people, real cooking, real EKAS.</p>
                                     </div>
                                     <div className="grid grid-cols-3 gap-3">
                                         {product.videos.ugc.slice(0, 3).map((video, idx) => (
@@ -443,7 +519,6 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                                     </div>
                                 </div>
                             )}
-
                         </div>
                     </div>
                 </div>
@@ -517,9 +592,9 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                         </div>
 
                         <div className="flex items-center gap-6 mt-4">
-                            <a href="#nutrition" className="text-[11px] font-bold text-[#17301A] uppercase tracking-widest border-b-[1.5px] border-[#17301A] pb-0.5 hover:text-[#2D5C35] hover:border-[#2D5C35] transition-colors">VIEW NUTRITION FACTS LABEL</a>
+                            <button onClick={(e) => { e.preventDefault(); setShowNutritionModal(true); }} className="text-[11px] font-bold text-[#17301A] uppercase tracking-widest border-b-[1.5px] border-[#17301A] pb-0.5 hover:text-[#2D5C35] hover:border-[#2D5C35] transition-colors">VIEW NUTRITION FACTS LABEL</button>
                             <span className="w-1 h-1 rounded-full bg-gray-300"></span>
-                            <a href="#process" className="text-[11px] font-medium text-gray-500 flex items-center gap-1 hover:text-[#17301A] transition-colors">How we press our oil <ChevronRight className="w-3 h-3" /></a>
+                            <Link href="/process" className="text-[11px] font-medium text-gray-500 flex items-center gap-1 hover:text-[#17301A] transition-colors">How we press our oil <ChevronRight className="w-3 h-3" /></Link>
                         </div>
                     </div>
 
@@ -536,11 +611,11 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
                 {/* Dossier Section 1b: Video Banner */}
                 <div className="w-full mb-10">
-                    <div className="text-center mb-10">
-                        <span className="text-[10px] font-bold text-[#8C6D3F] uppercase tracking-widest mb-4 block">FROM DECCAN SOIL TO YOUR TABLE</span>
-                        <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[#17301A] tracking-tight">LIGHTNESS IN EVERY DROP</h2>
+                    <div className="text-center mb-8">
+                        <span className="text-[10px] font-bold text-[#8C6D3F] uppercase tracking-widest mb-3 block">FROM DECCAN SOIL TO YOUR TABLE</span>
+                        <h2 className="text-3xl lg:text-5xl font-bold font-serif text-[#17301A] tracking-tight">LIGHTNESS IN EVERY DROP</h2>
                     </div>
-                    <div className="w-full relative overflow-hidden flex items-center justify-center aspect-video lg:aspect-[21/9]">
+                    <div className="w-full relative overflow-hidden flex items-center justify-center bg-black rounded-2xl shadow-sm" style={{ height: 'max(350px, 70vh)' }}>
                         {product.videos?.productPage ? (
                             <video
                                 src={product.videos.productPage}
@@ -615,7 +690,7 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                                     >
                                         <div className="overflow-hidden">
                                             <div className="px-5 pb-5 md:px-6 md:pb-5 pt-0 pr-12 md:pr-24">
-                                                <p className="text-[12px] md:text-[13px] text-gray-500 leading-relaxed font-light">{faq.a}</p>
+                                                <p className="text-[12px] md:text-[14px] text-gray-800 leading-relaxed font-normal">{faq.a}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -636,12 +711,12 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
 
 
                 {/* REVIEWS SECTION */}
-                <div className="w-full mb-20 bg-[#FBF9F4] rounded-[2rem] p-6 md:p-10 lg:p-16 border border-gray-100/50">
+                <div className="w-full mb-10 bg-[#FBF9F4] rounded-[2rem] p-6 md:p-10 lg:p-16 border border-gray-100/50">
                     {/* Header Row */}
                     <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-6 mb-10">
                         <div>
                             <span className="text-[10px] font-bold text-[#8C6D3F] uppercase tracking-widest mb-3 block">CUSTOMER TRANSPARENCY</span>
-                            <h2 className="text-4xl lg:text-5xl font-bold font-serif text-[#17301A] mb-3 tracking-tight">Real Customer Reviews</h2>
+                            <h2 className="text-3xl lg:text-5xl font-bold font-serif text-[#17301A] mb-3 tracking-tight">Real Customer Reviews</h2>
                             <p className="text-sm text-gray-600 font-medium">Authentic experiences from everyday home chefs, culinary experts, and families.</p>
                         </div>
                         <button className="bg-[#17301A] text-white text-[11px] font-bold px-6 py-3.5 rounded-full flex items-center gap-2.5 hover:bg-[#204024] transition-colors shrink-0 tracking-wider">
@@ -945,6 +1020,65 @@ export default function ProductPage({ params }: { params: Promise<{ id: string }
                     </div>
                 </div>
             </div>
+            {/* Nutrition Facts Modal */}
+            {showNutritionModal && (
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
+                    <div className="absolute inset-0 bg-black/40 backdrop-blur-sm transition-opacity" onClick={() => setShowNutritionModal(false)}></div>
+                    <div className="bg-white rounded-xl shadow-2xl relative z-10 w-full max-w-sm overflow-hidden flex flex-col animate-fade-in-up">
+                        <div className="p-6 pb-2">
+                            <div className="flex justify-between items-center mb-1">
+                                <h2 className="text-2xl font-serif font-black text-[#1F2937]">Nutrition Facts</h2>
+                                <button onClick={() => setShowNutritionModal(false)} className="text-gray-400 hover:text-gray-600 transition-colors">
+                                    <X className="w-5 h-5" />
+                                </button>
+                            </div>
+                            <div className="w-full border-b border-gray-300 mb-1"></div>
+                            <p className="text-[10px] text-gray-500 mb-3">Serving Size: 1 Tbsp (15ml)</p>
+
+                            <div className="flex justify-between items-end mb-1 border-b-[6px] border-black pb-1">
+                                <span className="text-xl font-bold text-[#1F2937]">Calories</span>
+                                <span className="text-3xl font-black text-[#1F2937] leading-none">120</span>
+                            </div>
+
+                            <div className="space-y-0 text-[11px]">
+                                <div className="flex justify-between py-1.5 border-b border-gray-200">
+                                    <span className="font-bold text-[#1F2937]">Total Fat</span>
+                                    <span className="font-bold text-[#1F2937]">14g (18% DV)</span>
+                                </div>
+                                <div className="flex justify-between py-1.5 border-b border-gray-200 pl-4">
+                                    <span className="text-gray-600">Saturated Fat</span>
+                                    <span className="text-gray-600">1.5g (8% DV)</span>
+                                </div>
+                                <div className="flex justify-between py-1.5 border-b border-gray-200 pl-4">
+                                    <span className="text-gray-600">Polyunsaturated Fat</span>
+                                    <span className="text-gray-600">9g</span>
+                                </div>
+                                <div className="flex justify-between py-1.5 border-b border-gray-200 pl-4">
+                                    <span className="text-gray-600">Monounsaturated Fat</span>
+                                    <span className="text-gray-600">3.5g</span>
+                                </div>
+                                <div className="flex justify-between py-1.5 border-b border-gray-200 pl-4">
+                                    <span className="text-gray-600">Trans Fat</span>
+                                    <span className="text-gray-600">0g (0%)</span>
+                                </div>
+                                <div className="flex justify-between py-1.5 border-b border-gray-200">
+                                    <span className="font-bold text-[#1F2937]">Cholesterol</span>
+                                    <span className="font-bold text-[#1F2937]">0mg (0%)</span>
+                                </div>
+                                <div className="flex justify-between py-1.5">
+                                    <span className="font-bold text-[#2D5C35]">Natural Vitamin E</span>
+                                    <span className="font-bold text-[#2D5C35]">5.6mg (37% DV)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="p-6 pt-4">
+                            <button onClick={() => setShowNutritionModal(false)} className="w-auto ml-auto px-6 py-2 bg-[#17301A] text-white text-[10px] font-bold rounded-full tracking-widest uppercase hover:bg-[#204024] transition-colors block">
+                                CLOSE
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }
